@@ -1,0 +1,47 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "battery 0"
+order += "disk /"
+order += "memory"
+order += "wireless _first_"
+order += "tztime local"
+
+battery 0 {
+        format = "BAT %status %percentage"
+        path = "/sys/class/power_supply/axp288_fuel_gauge/uevent"
+        format_down = "NO BATTERY"
+        status_chr = "CHARGING..."
+        status_bat = ""
+        status_unk = "? UNK"
+        status_full = "FULL"
+}
+
+disk "/" {
+        format = "DISK %avail / %total"
+}
+
+memory {
+        format = "RAM %used / %total"
+        threshold_degraded = "500MB"
+        format_degraded = "RAM < %available"
+}
+
+wireless _first_ {
+        format_up = "%essid"
+        format_down = "NOT CONNECTED"
+}
+
+tztime local {
+        format = "%H:%M . %a %d %b %Y"
+}
