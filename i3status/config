@@ -14,8 +14,8 @@ general {
 order += "battery 0"
 order += "disk /"
 order += "memory"
-order += "wireless _first_"
 order += "tztime local"
+order += "wireless _first_"
 
 battery 0 {
         format = "BAT %status %percentage"
@@ -37,11 +37,11 @@ memory {
         format_degraded = "RAM < %available"
 }
 
+tztime local {
+        format = "%H:%M . %a %d %b %Y"
+}
+
 wireless _first_ {
         format_up = "%essid"
         format_down = "NOT CONNECTED"
-}
-
-tztime local {
-        format = "%H:%M . %a %d %b %Y"
 }
