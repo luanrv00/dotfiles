@@ -32,7 +32,7 @@ set laststatus=2
 "   %P percentage through buffer (smart, includes 'Top' and 'Bot' markers)
 set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 
-filetype indent on
+filetype indent plugin on
 syntax on
 colorscheme gruvbox
 
