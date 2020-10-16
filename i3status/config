@@ -11,11 +11,20 @@ general {
         interval = 5
 }
 
+order += "volume master"
 order += "battery 0"
 order += "disk /"
 order += "memory"
 order += "tztime local"
 order += "wireless _first_"
+
+volume master {
+        format = "♫ %volume"
+        format_muted = "♫ MUTED (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
 
 battery 0 {
         format = "BAT %status %percentage"
