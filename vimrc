@@ -18,6 +18,7 @@ set expandtab
 set number relativenumber
 set background=dark
 set laststatus=2
+set cursorline
 
 " statusline used markers:
 "   %< truncation point
@@ -34,23 +35,37 @@ set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 
 filetype indent plugin on
 syntax on
-colorscheme gruvbox
 
-" overriding colorscheme
-" background: 16
-" text: 255
-" gray: 245
-" mediumgray: 235
+
+" color pallete
+" white: 255
+" black: 232
 " darkgray: 233
-hi Normal ctermbg=16
-hi VertSplit ctermbg=16 ctermfg=235 cterm=none
+" mediumgray: 240
+" gray: 245
+" red: 203
+hi Normal ctermbg=232 ctermfg=255
+hi Comment ctermbg=232 ctermfg=245 cterm=italic
+hi String ctermbg=232 ctermfg=255
+hi VertSplit ctermbg=232 ctermfg=240
 hi StatusLine ctermbg=233 ctermfg=255 cterm=none
 hi StatusLineNc ctermbg=233 ctermfg=245 cterm=none
-hi Comment ctermbg=16 ctermfg=245 cterm=italic
-hi TabLineSel ctermbg=16 ctermfg=255 cterm=none
-hi TabLineFill ctermbg=233 ctermfg=245 cterm=none
-hi Folded ctermbg=16 ctermfg=245 cterm=italic
-hi ColorColumn ctermbg=233 
+hi TabLine ctermbg=233 ctermfg=255 cterm=none
+hi TabLineSel ctermbg=240 ctermfg=255 cterm=none
+hi TabLineFill ctermbg=233 ctermfg=255 cterm=none
+hi Folded ctermbg=232 ctermfg=245 cterm=italic
+hi ColorColumn ctermbg=233
+hi CursorLine ctermbg=233 cterm=none
+hi LineNr ctermbg=232 ctermfg=240 cterm=none
+hi CursorLineNr ctermbg=232 ctermfg=240 cterm=none
+
+let mapleader = "-"
+
+" Identify the highlight group under the cursor
+map <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+\ . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Make splits navigation easies
 nnoremap <c-k> <c-w>k
