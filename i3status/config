@@ -47,7 +47,7 @@ memory {
 }
 
 tztime local {
-        format = "%H:%M . %a %d %b %Y"
+        format = "%a %d %b, %Y • %H:%M"
 }
 
 wireless _first_ {
