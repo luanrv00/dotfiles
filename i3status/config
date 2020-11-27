@@ -13,8 +13,8 @@ general {
 
 order += "volume master"
 order += "battery 0"
-order += "disk /"
 order += "memory"
+order += "disk /"
 order += "tztime local"
 order += "wireless _first_"
 
@@ -36,14 +36,14 @@ battery 0 {
         status_full = "FULL"
 }
 
-disk "/" {
-        format = "DISK %avail / %total"
-}
-
 memory {
         format = "RAM %used / %total"
         threshold_degraded = "500MB"
         format_degraded = "RAM < %available"
+}
+
+disk "/" {
+        format = "DISK %avail / %total"
 }
 
 tztime local {

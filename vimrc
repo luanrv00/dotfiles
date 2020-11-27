@@ -36,6 +36,7 @@ set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 filetype indent plugin on
 syntax on
 
+colorscheme gruvbox
 
 " color pallete
 " white: 255
@@ -46,7 +47,7 @@ syntax on
 " red: 203
 hi Normal ctermbg=232 ctermfg=255
 hi Comment ctermbg=232 ctermfg=245 cterm=italic
-hi String ctermbg=232 ctermfg=255
+hi String ctermbg=232 ctermfg=223
 hi VertSplit ctermbg=232 ctermfg=240
 hi StatusLine ctermbg=233 ctermfg=255 cterm=none
 hi StatusLineNc ctermbg=233 ctermfg=245 cterm=none
