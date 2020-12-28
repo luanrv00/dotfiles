@@ -128,3 +128,4 @@ dl-track() {
 dl-playlist() {
   youtube-dl -x --audio-format mp3 $1
 }
+alias g="git"
