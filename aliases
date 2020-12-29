@@ -1,2 +1,4 @@
 alias ls="ls -hl --color=auto"
 alias lsa="ls -hlA --color=auto"
+alias g="git"
+
