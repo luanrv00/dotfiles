@@ -1,0 +1,90 @@
+#!/bin/env sh
+
+# Setup my dotfiles for a fresh Xubuntu installation.
+# NOTE: This scripts assumes the dotfiles folder is at path ~/dotfiles
+
+# Install git and download dotfiles from remote repository 
+# NOTE: ssh must be already configured for GitHub
+echo 'Setting up git...'
+if [ -f ~/.gitconfig ]; then
+  rm ~/.gitconfig
+fi
+sudo apt install -y git
+
+echo 'Downloading dotfiles...'
+git clone git@github.com:luanrvmood/dotfiles.git
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+
+# Update system default folders (Downloads, Music, Pictures, etc)
+echo 'Setting up system folders...'
+if [ -f ~/.user-dirs.dirs ]; then
+  rm ~/.user-dirs.dirs
+fi
+
+ln -s ~/dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
+rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
+mkdir downloads tracks pics videos docs projects
+
+# Install i3 and i3status
+echo 'Installing i3wm...'
+if [ -d ~/.config/i3 ]; then
+  rm -r ~/.config/i3
+fi
+
+if [ -d ~/.config/i3status ]; then
+  rm -r ~/.config/i3status
+fi
+
+sudo apt install -y i3
+echo 'exec i3' > ~/.xinitrc
+mkdir ~/.config/i3
+mkdir ~/.config/i3status
+ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
+ln -s ~/dotfiles/config/i3status/config ~/.config/i3status/config
+i3-msg reload
+
+# Setup bash and aliases 
+echo 'Setting up the shell (bash)...'
+if [ -f ~/.aliases ]; then
+  rm ~/.aliases
+fi
+
+if [ -f ~/.bashrc ]; then
+  rm ~/.bashrc
+fi
+
+ln -s ~/dotfiles/shell/aliases ~/.aliases
+ln -s ~/dotfiles/shell/bashrc ~/.bashrc
+
+# Install Vim from source (with os clipboard support) and setup Dracula theme
+# NOTE: Need to update /etc/apt/sources.list with additional deb-src URIS
+echo 'Downloading Vim source code...'
+sudo apt build-dep -y vim
+git clone git@github.com:vim/vim.git
+
+echo 'Installing Vim...'
+cd vim
+./configure --with-x
+make
+sudo make install
+cd
+rm -rf vim
+
+echo 'Setting up Vim...'
+if [ -f ~/.vimrc ]; then
+  rm -rf ~/.vimrc
+fi
+
+ln -s ~/dotfiles/vimrc ~/.vimrc
+
+if [ -d ~/.vim ]; then
+  rm -rf ~/.vim
+fi
+
+echo 'Setting up the Vim colorscheme...'
+mkdir -p ~/.vim/pack/themes/start
+cd ~/.vim/pack/themes/start
+git clone https://github.com/dracula/vim.git dracula
+cd
+
+echo 'DONE!'
