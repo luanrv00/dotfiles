@@ -36,29 +36,22 @@ set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 filetype indent plugin on
 syntax on
 
-colorscheme gruvbox
+packadd! dracula
+colorscheme dracula
 
-" color pallete
-" white: 255
-" black: 232
-" darkgray: 233
-" mediumgray: 240
-" gray: 245
-" red: 203
 hi Normal ctermbg=232 ctermfg=255
-hi Comment ctermbg=232 ctermfg=245 cterm=italic
-hi String ctermbg=232 ctermfg=223
-hi VertSplit ctermbg=232 ctermfg=240
+hi Comment ctermfg=245 cterm=italic
+hi CursorLine ctermbg=233 cterm=none
+hi LineNr ctermfg=240 cterm=none
+hi CursorLineNr ctermfg=240 cterm=none
 hi StatusLine ctermbg=233 ctermfg=255 cterm=none
 hi StatusLineNc ctermbg=233 ctermfg=245 cterm=none
-hi TabLine ctermbg=233 ctermfg=255 cterm=none
-hi TabLineSel ctermbg=240 ctermfg=255 cterm=none
-hi TabLineFill ctermbg=233 ctermfg=255 cterm=none
-hi Folded ctermbg=232 ctermfg=245 cterm=italic
 hi ColorColumn ctermbg=233
-hi CursorLine ctermbg=233 cterm=none
-hi LineNr ctermbg=232 ctermfg=240 cterm=none
-hi CursorLineNr ctermbg=232 ctermfg=240 cterm=none
+hi VertSplit ctermbg=232 ctermfg=240 cterm=none
+hi TabLine ctermbg=233 ctermfg=245 cterm=none
+hi TabLineSel ctermbg=240 ctermfg=255 cterm=none
+hi TabLineFill ctermbg=233 ctermfg=245 cterm=none
+hi Folded ctermbg=232 ctermfg=245 cterm=italic
 
 let mapleader = "-"
 
