@@ -3,7 +3,7 @@
 # Setup my dotfiles for a fresh Xubuntu installation.
 # NOTE: This scripts assumes the dotfiles folder is at path ~/dotfiles
 
-# Install git and download dotfiles from remote repository 
+# Install git and download dotfiles from remote repository
 # NOTE: ssh must be already configured for GitHub
 echo 'Setting up git...'
 if [ -f ~/.gitconfig ]; then
@@ -41,9 +41,13 @@ mkdir ~/.config/i3
 mkdir ~/.config/i3status
 ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/config/i3status/config ~/.config/i3status/config
+
+echo 'Installing feh for background beauty...'
+sudo apt install -y feh
+
 i3-msg reload
 
-# Setup bash and aliases 
+# Setup bash and aliases
 echo 'Setting up the shell (bash)...'
 if [ -f ~/.aliases ]; then
   rm ~/.aliases

@@ -182,3 +182,5 @@ bar {
 
 hide_edge_borders both
 new_window pixel 0px
+
+exec --no-startup-id feh --bg-fill ~/pics/wallpaper.jpg
