@@ -79,7 +79,7 @@ if [ -f ~/.vimrc ]; then
   rm -rf ~/.vimrc
 fi
 
-ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/editor/vimrc ~/.vimrc
 
 if [ -d ~/.vim ]; then
   rm -rf ~/.vim
