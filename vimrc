@@ -78,3 +78,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " Remove unwanted white spaces
 autocmd FileType sh,vim,ruby,python,shell,javascript,html,css autocmd BufWritePre <buffer> %s/\s\+$//e
+
+nnoremap qq :q!<cr>
+nnoremap ww :w!<cr>
