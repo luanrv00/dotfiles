@@ -26,7 +26,7 @@ rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
 mkdir downloads tracks pics videos docs projects
 
 # Install i3 and i3status
-echo 'Installing i3wm...'
+echo 'Setting up i3wm...'
 if [ -d ~/.config/i3 ]; then
   rm -r ~/.config/i3
 fi
@@ -60,13 +60,12 @@ fi
 ln -s ~/dotfiles/shell/aliases ~/.aliases
 ln -s ~/dotfiles/shell/bashrc ~/.bashrc
 
-# Install Vim from source (with os clipboard support) and setup Dracula theme
+# Installs Vim from source (with os clipboard support) and setup Dracula theme
 # NOTE: Need to update /etc/apt/sources.list with additional deb-src URIS
-echo 'Downloading Vim source code...'
+echo 'Setting up Vim...'
 sudo apt build-dep -y vim
 git clone git@github.com:vim/vim.git
 
-echo 'Installing Vim...'
 cd vim
 ./configure --with-x
 make
@@ -74,7 +73,6 @@ sudo make install
 cd
 rm -rf vim
 
-echo 'Setting up Vim...'
 if [ -f ~/.vimrc ]; then
   rm -rf ~/.vimrc
 fi
@@ -85,19 +83,19 @@ if [ -d ~/.vim ]; then
   rm -rf ~/.vim
 fi
 
-echo 'Setting up the Vim colorscheme...'
 mkdir -p ~/.vim/pack/themes/start
 cd ~/.vim/pack/themes/start
 git clone https://github.com/dracula/vim.git dracula
 cd
 
-echo 'Installing RVM and the latest Ruby...'
+echo 'Setting up Ruby (using RVM)...'
 sudo apt install -y gnupg2 curl
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
-echo 'Installing youtube-dl module...'
-sudo apt install -y youtube-dl
+echo 'Setting up Python...'
+sudo apt install -y python3-venv
+ln -s /usr/bin/python3 /usr/bin/python
 
 echo 'DONE!'
