@@ -8,6 +8,8 @@ set nofoldenable " All folds open when entering a buffer
 set colorcolumn=80
 set textwidth=80
 set autoindent
+set lazyredraw
+set nomodeline " Disable external set commands
 
 " Identation settings
 set softtabstop=2
