@@ -104,4 +104,22 @@ fi
 mkdir -p ~/.vim/after/syntax/
 ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
 
+echo 'Setting up JavaScript...'
+if [ -d ~/.vim/pack/syntax/start/vim-javascript ]; then
+  rm -r ~/.vim/pack/syntax/start/vim-javascript
+fi
+
+mkdir -p ~/.vim/syntax/start/
+cd ~/.vim/syntax/start/
+git clone git@github.com:pangloss/vim-javascript.git
+
+echo 'Setting up TypeScript...'
+if [ -d ~/.vim/pack/syntax/start/typescript-vim ]; then
+  rm -r ~/.vim/pack/syntax/start/typescript-vim
+fi
+
+mkdir -p ~/.vim/syntax/start/
+cd ~/.vim/syntax/start/
+git clone git@github.com:leafgarland/typescript-vim.git
+
 echo 'DONE!'
