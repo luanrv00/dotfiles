@@ -21,6 +21,7 @@ set number relativenumber
 set background=dark
 set laststatus=2
 set cursorline
+set guifont=JetBrains\ Mono\ ExtraLight\ 12
 
 " statusline used markers:
 "   %< truncation point

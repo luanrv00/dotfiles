@@ -122,4 +122,7 @@ mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
 
+echo 'Setting up JetBrains Mono font...'
+curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
+
 echo 'DONE!'
