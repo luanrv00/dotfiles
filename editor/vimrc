@@ -53,7 +53,8 @@ hi VertSplit ctermbg=232 ctermfg=240 cterm=none
 hi TabLine ctermbg=233 ctermfg=245 cterm=none
 hi TabLineSel ctermbg=240 ctermfg=255 cterm=none
 hi TabLineFill ctermbg=233 ctermfg=245 cterm=none
-hi Folded ctermbg=232 ctermfg=245 cterm=italic
+hi Folded ctermbg=232 ctermfg=240 cterm=italic
+hi String ctermfg=228 cterm=italic
 
 hi! link pythonTripleQuotes Comment
 hi! link pythonDocstring Comment
@@ -61,6 +62,10 @@ hi! link pythonDecorator Comment
 hi! link pythonDecoratorName Comment
 hi! link pythonDocTest Comment
 hi! link pythonDocTestValue Comment
+
+hi! link rubySharpBang Comment
+
+hi! link gitCommitSummary Normal
 
 let mapleader = "-"
 
