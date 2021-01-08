@@ -21,7 +21,7 @@ if [ -f ~/.user-dirs.dirs ]; then
   rm ~/.user-dirs.dirs
 fi
 
-ln -s ~/dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
+ln -s ~/dotfiles/dotconfig/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
 mkdir downloads tracks pics videos docs projects
 
@@ -39,8 +39,8 @@ sudo apt install -y i3
 echo 'exec i3' > ~/.xinitrc
 mkdir ~/.config/i3
 mkdir ~/.config/i3status
-ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
-ln -s ~/dotfiles/config/i3status/config ~/.config/i3status/config
+ln -s ~/dotfiles/dotconfig/i3/config ~/.config/i3/config
+ln -s ~/dotfiles/dotconfig/i3status/config ~/.config/i3status/config
 
 echo 'Installing feh for background beauty...'
 sudo apt install -y feh
