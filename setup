@@ -3,12 +3,24 @@
 # Setup my dotfiles for a fresh Xubuntu installation.
 # NOTE: This scripts assumes the dotfiles folder is at path ~/dotfiles
 
+# Makes backup of current dotfiles
+echo 'Backing up current dotfiles...'
+mkdir ~/dotfilesbak
+
+if [ -f ~/.config/user-dirs.dirs ]; then mv ~/.config/user-dirs.dirs ~/dotfilesbak; fi
+if [ -d ~/.config/i3 ]; then mv ~/.config/i3 ~/dotfilesbak; fi
+if [ -d ~/.config/i3status ]; then mv ~/.config/i3status ~/dotfilesbak; fi
+if [ -f ~/.gitconfig ]; then mv ~/.gitconfig ~/dotfilesbak; fi
+if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/dotfilesbak; fi
+if [ -f ~/.aliases ]; then mv ~/.aliases ~/dotfilesbak; fi
+if [ -d ~/.vim ]; then mv ~/.vim ~/dotfilesbak; fi
+if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/dotfilesbak; fi
+
+echo 'All old dotfiles was backed up at ~/dotfilesbak if you wanna those.'
+
 # Install git and download dotfiles from remote repository
 # NOTE: ssh must be already configured for GitHub
 echo 'Setting up git...'
-if [ -f ~/.gitconfig ]; then
-  rm ~/.gitconfig
-fi
 sudo apt install -y git
 
 echo 'Downloading dotfiles...'
@@ -17,24 +29,12 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 
 # Update system default folders (Downloads, Music, Pictures, etc)
 echo 'Setting up system folders...'
-if [ -f ~/.user-dirs.dirs ]; then
-  rm ~/.user-dirs.dirs
-fi
-
 ln -s ~/dotfiles/dotconfig/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
 mkdir downloads tracks pics videos docs projects
 
 # Install i3 and i3status
 echo 'Setting up i3wm...'
-if [ -d ~/.config/i3 ]; then
-  rm -r ~/.config/i3
-fi
-
-if [ -d ~/.config/i3status ]; then
-  rm -r ~/.config/i3status
-fi
-
 sudo apt install -y i3
 echo 'exec i3' > ~/.xinitrc
 mkdir ~/.config/i3
@@ -49,14 +49,6 @@ i3-msg reload
 
 # Setup bash and aliases
 echo 'Setting up the shell (bash)...'
-if [ -f ~/.aliases ]; then
-  rm ~/.aliases
-fi
-
-if [ -f ~/.bashrc ]; then
-  rm ~/.bashrc
-fi
-
 ln -s ~/dotfiles/shell/aliases ~/.aliases
 ln -s ~/dotfiles/shell/bashrc ~/.bashrc
 
@@ -73,15 +65,7 @@ sudo make install
 cd
 rm -rf vim
 
-if [ -f ~/.vimrc ]; then
-  rm -rf ~/.vimrc
-fi
-
 ln -s ~/dotfiles/editor/vimrc ~/.vimrc
-
-if [ -d ~/.vim ]; then
-  rm -rf ~/.vim
-fi
 
 mkdir -p ~/.vim/pack/themes/start
 cd ~/.vim/pack/themes/start
@@ -97,27 +81,15 @@ source ~/.rvm/scripts/rvm
 echo 'Setting up Python...'
 sudo apt install -y python3-venv
 
-if [ -d ~/.vim/after/syntax ]; then
-  rm -r ~/.vim/after/syntax
-fi
-
 mkdir -p ~/.vim/after/syntax/
 ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
 
 echo 'Setting up JavaScript...'
-if [ -d ~/.vim/pack/syntax/start/vim-javascript ]; then
-  rm -r ~/.vim/pack/syntax/start/vim-javascript
-fi
-
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:pangloss/vim-javascript.git
 
 echo 'Setting up TypeScript...'
-if [ -d ~/.vim/pack/syntax/start/typescript-vim ]; then
-  rm -r ~/.vim/pack/syntax/start/typescript-vim
-fi
-
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
