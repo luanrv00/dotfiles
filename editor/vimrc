@@ -5,13 +5,15 @@ set nowrap
 set noswapfile
 set nobackup
 set nowritebackup
+set autowrite
 set foldmethod=indent
 set nofoldenable " All folds open when entering a buffer
 set colorcolumn=80
 set textwidth=80
 set autoindent
 set lazyredraw
-set nomodeline " Disable external set commands
+set nomodeline  " Disable external set commands
+set modelines=0 " Disable external set commands
 set backspace=2 " Enable backspace to work as expected
 
 " Identation settings
@@ -94,8 +96,16 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>w :w!<cr>
+
 " Remove unwanted white spaces
 autocmd FileType sh,vim,ruby,python,shell,javascript,html,css autocmd BufWritePre <buffer> %s/\s\+$//e
 
-nnoremap <leader>q :q!<cr>
-nnoremap <leader>w :w!<cr>
+" Always jump to the last known cursor position when editing a file,
+" except for commit messages.
+" Retired from https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+autocmd BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
