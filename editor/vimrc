@@ -3,6 +3,8 @@ set splitright
 set splitbelow
 set nowrap
 set noswapfile
+set nobackup
+set nowritebackup
 set foldmethod=indent
 set nofoldenable " All folds open when entering a buffer
 set colorcolumn=80
