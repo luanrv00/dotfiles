@@ -8,8 +8,8 @@ set nowritebackup
 set autowrite
 set foldmethod=indent
 set nofoldenable " All folds open when entering a buffer
-set colorcolumn=80
 set textwidth=80
+set colorcolumn=81
 set autoindent
 set lazyredraw
 set nomodeline  " Disable external set commands
@@ -20,9 +20,11 @@ set backspace=2 " Enable backspace to work as expected
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set shiftround " Round indent to multiple of shiftwidth
 
 " Visual settings
 set number relativenumber
+set numberwidth=1
 set background=dark
 set laststatus=2
 set cursorline
