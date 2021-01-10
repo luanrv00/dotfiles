@@ -88,11 +88,19 @@ echo 'Setting up JavaScript...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:pangloss/vim-javascript.git
+cd
 
 echo 'Setting up TypeScript...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
+cd
+
+echo 'Setting up React/JSX syntax...'
+mkdir -p ~/.vim/syntax/start
+cd ~/.vim/syntax/start
+git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
+cd
 
 echo 'Setting up JetBrains Mono font...'
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
