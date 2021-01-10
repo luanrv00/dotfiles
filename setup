@@ -109,15 +109,12 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 
 echo 'Setting up Python environment...'
-sudo apt install -y python3-venv
+asdf plugin add python
+asdf install python latest
 
 echo 'Setting up Ruby environment...'
 asdf plugin add ruby
 asdf install ruby latest
-# sudo apt install -y gnupg2 curl
-# gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-# curl -sSL https://get.rvm.io | bash -s stable
-# source ~/.rvm/scripts/rvm
 
 echo 'Setting up Node environment...'
 asdf plugin add node
