@@ -51,6 +51,7 @@ i3-msg reload
 echo 'Setting up the shell (bash)...'
 ln -s ~/dotfiles/shell/aliases ~/.aliases
 ln -s ~/dotfiles/shell/bashrc ~/.bashrc
+ln -s ~/dotfiles/shell/inputrc ~/.inputrc
 
 echo 'Setting up JetBrains Mono font...'
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
