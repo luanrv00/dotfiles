@@ -42,6 +42,11 @@ mkdir ~/.config/i3status
 ln -s ~/dotfiles/dotconfig/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/dotconfig/i3status/config ~/.config/i3status/config
 
+# Uninstall xfce4 desktop stuffs and enable i3wm
+echo 'Uninstalling xfce4 desktop environment...'
+sudo apt remove --purge xfdestkop4 xfdestkop4-data
+xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
+
 echo 'Installing feh for wallpaper settings...'
 sudo apt install -y feh
 
