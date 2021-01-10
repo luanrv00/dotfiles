@@ -4,7 +4,7 @@
 # NOTE: This scripts assumes the dotfiles folder is at path ~/dotfiles
 
 # Makes backup of current dotfiles
-echo 'Backing up current dotfiles...'
+echo 'Making backup of current dotfiles...'
 mkdir ~/dotfilesbak
 
 if [ -f ~/.config/user-dirs.dirs ]; then mv ~/.config/user-dirs.dirs ~/dotfilesbak; fi
@@ -16,7 +16,7 @@ if [ -f ~/.aliases ]; then mv ~/.aliases ~/dotfilesbak; fi
 if [ -d ~/.vim ]; then mv ~/.vim ~/dotfilesbak; fi
 if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/dotfilesbak; fi
 
-echo 'All old dotfiles was backed up at ~/dotfilesbak if you wanna those.'
+echo 'Backup saved at ~/dotfilesbak path'
 
 # Install git and download dotfiles from remote repository
 # NOTE: ssh must be already configured for GitHub
@@ -42,7 +42,7 @@ mkdir ~/.config/i3status
 ln -s ~/dotfiles/dotconfig/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/dotconfig/i3status/config ~/.config/i3status/config
 
-echo 'Installing feh for background beauty...'
+echo 'Installing feh for wallpaper settings...'
 sudo apt install -y feh
 
 i3-msg reload
@@ -52,19 +52,25 @@ echo 'Setting up the shell (bash)...'
 ln -s ~/dotfiles/shell/aliases ~/.aliases
 ln -s ~/dotfiles/shell/bashrc ~/.bashrc
 
-# Installs Vim from source (with os clipboard support) and setup Dracula theme
-# NOTE: Need to update /etc/apt/sources.list with additional deb-src URIS
+echo 'Setting up JetBrains Mono font...'
+curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
+
+echo 'Basic system configured! Installing tools...'
+
+# Install Vim from source (with OS clipboard support) and setup
+# Dracula colorscheme (https://github.com/dracula/vim)
+#
+# NOTE: Need to update /etc/apt/sources.list with additional deb-src URIS to
+# install Vim dependencies
 echo 'Setting up Vim...'
 sudo apt build-dep -y vim
 git clone git@github.com:vim/vim.git
-
 cd vim
 ./configure --with-x
 make
 sudo make install
 cd
 rm -rf vim
-
 ln -s ~/dotfiles/editor/vimrc ~/.vimrc
 
 mkdir -p ~/.vim/pack/themes/start
@@ -72,25 +78,13 @@ cd ~/.vim/pack/themes/start
 git clone https://github.com/dracula/vim.git dracula
 cd
 
-echo 'Setting up Ruby (using RVM)...'
-sudo apt install -y gnupg2 curl
-gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-
-echo 'Setting up Python...'
-sudo apt install -y python3-venv
-
-mkdir -p ~/.vim/after/syntax/
-ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
-
-echo 'Setting up JavaScript...'
+echo 'Setting up JavaScript syntax...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:pangloss/vim-javascript.git
 cd
 
-echo 'Setting up TypeScript...'
+echo 'Setting up TypeScript syntax...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
@@ -102,7 +96,19 @@ cd ~/.vim/syntax/start
 git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
 cd
 
-echo 'Setting up JetBrains Mono font...'
-curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
+echo 'Setting up Python syntax...'
+mkdir -p ~/.vim/after/syntax/
+ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
+
+echo 'Vim is ready to use!'
+
+echo 'Setting up Ruby environment (using RVM)...'
+sudo apt install -y gnupg2 curl
+gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+
+echo 'Setting up Python environment...'
+sudo apt install -y python3-venv
 
 echo 'DONE!'
