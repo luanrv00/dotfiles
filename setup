@@ -116,8 +116,4 @@ echo 'Setting up Ruby environment...'
 asdf plugin add ruby
 asdf install ruby latest
 
-echo 'Setting up Node environment...'
-asdf plugin add node
-asdf install node latest
-
 echo 'DONE!'
