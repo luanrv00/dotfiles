@@ -1,5 +1,11 @@
+[init]
+        defaultBranch = main
 [user]
 	name = Luan F. R. Vicente
 	email = luanrvmood@gmail.com
 [core]
 	editor = vim
+[fetch]
+        prune = true
+[push]
+        default = current
