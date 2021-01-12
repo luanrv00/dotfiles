@@ -75,6 +75,10 @@ hi! link rubySharpBang Comment
 
 hi! link gitCommitSummary Normal
 
+hi! link javaCommentTitle Comment
+hi! link javaDocTags Comment
+hi! link javaDocParam Comment
+
 let mapleader = "-"
 
 " Identify the highlight group under the cursor
