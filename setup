@@ -133,4 +133,9 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt update
 sudo apt install -y typora
 
+echo 'Installing Google Chrome...'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list'
+sudo apt update
+sudo apt install -y google-chrome-stable
+
 echo 'DONE!'
