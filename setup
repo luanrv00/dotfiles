@@ -33,8 +33,9 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 # Update system default folders (Downloads, Music, Pictures, etc)
 echo 'Setting up system folders...'
 ln -s ~/dotfiles/dotconfig/user-dirs.dirs ~/.config/user-dirs.dirs
+cd
 rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
-mkdir downloads tracks pics videos docs projects
+mkdir downloads tracks pics videos docs repos
 
 # Install i3 and i3status
 echo 'Setting up i3wm...'
