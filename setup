@@ -18,6 +18,9 @@ if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/backup_dotfiles; fi
 
 echo 'Backup saved at path ~/backup_dotfiles'
 
+echo 'Installing basic packages...'
+sudo apt install -y curl wget
+
 # Install git and download dotfiles from remote repository
 # NOTE: ssh must be already configured for GitHub
 echo 'Setting up git...'
@@ -44,7 +47,7 @@ ln -s ~/dotfiles/dotconfig/i3status/config ~/.config/i3status/config
 
 # Uninstall xfce4 desktop stuffs and enable i3wm
 echo 'Uninstalling xfce4 desktop environment...'
-sudo apt remove --purge xfdestkop4 xfdestkop4-data
+sudo apt remove --purge -y xfdestkop4 xfdestkop4-data
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
 
 echo 'Installing feh for wallpaper settings...'
