@@ -5,18 +5,18 @@
 
 # Makes backup of current dotfiles
 echo 'Making backup of current dotfiles...'
-mkdir ~/dotfilesbak
+mkdir ~/backup_dotfiles
 
-if [ -f ~/.config/user-dirs.dirs ]; then mv ~/.config/user-dirs.dirs ~/dotfilesbak; fi
-if [ -d ~/.config/i3 ]; then mv ~/.config/i3 ~/dotfilesbak; fi
-if [ -d ~/.config/i3status ]; then mv ~/.config/i3status ~/dotfilesbak; fi
-if [ -f ~/.gitconfig ]; then mv ~/.gitconfig ~/dotfilesbak; fi
-if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/dotfilesbak; fi
-if [ -f ~/.aliases ]; then mv ~/.aliases ~/dotfilesbak; fi
-if [ -d ~/.vim ]; then mv ~/.vim ~/dotfilesbak; fi
-if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/dotfilesbak; fi
+if [ -f ~/.config/user-dirs.dirs ]; then mv ~/.config/user-dirs.dirs ~/backup_dotfiles; fi
+if [ -d ~/.config/i3 ]; then mv ~/.config/i3 ~/backup_dotfiles; fi
+if [ -d ~/.config/i3status ]; then mv ~/.config/i3status ~/backup_dotfiles; fi
+if [ -f ~/.gitconfig ]; then mv ~/.gitconfig ~/backup_dotfiles; fi
+if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/backup_dotfiles; fi
+if [ -f ~/.aliases ]; then mv ~/.aliases ~/backup_dotfiles; fi
+if [ -d ~/.vim ]; then mv ~/.vim ~/backup_dotfiles; fi
+if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/backup_dotfiles; fi
 
-echo 'Backup saved at ~/dotfilesbak path'
+echo 'Backup saved at path ~/backup_dotfiles'
 
 # Install git and download dotfiles from remote repository
 # NOTE: ssh must be already configured for GitHub
@@ -114,6 +114,7 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 
 echo 'Setting up Python environment...'
+sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 asdf plugin add python
 asdf install python latest
 
