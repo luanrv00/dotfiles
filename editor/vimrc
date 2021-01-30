@@ -80,6 +80,8 @@ hi! link javaCommentTitle Comment
 hi! link javaDocTags Comment
 hi! link javaDocParam Comment
 
+hi! link htmlLink Normal
+
 let mapleader = "-"
 
 " Identify the highlight group under the cursor
