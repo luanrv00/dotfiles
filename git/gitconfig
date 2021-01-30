@@ -9,3 +9,10 @@
         prune = true
 [push]
         default = current
+[alias]
+	s = status
+	c = commit
+	br = branch
+	r = rebase
+	d = diff
+	ds = diff --staged
