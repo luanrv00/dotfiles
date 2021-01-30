@@ -1,7 +1,8 @@
 set clipboard=unnamedplus
 set splitright
 set splitbelow
-set nowrap
+set wrap
+set linebreak
 set noswapfile
 set nobackup
 set nowritebackup
