@@ -21,7 +21,7 @@ echo 'Setting up JetBrains Mono font...'
 sudo apt install -y curl
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
 
-echo 'Setting up the Bash...'
+echo 'Setting up the shell...'
 if [ -f ~/.aliases ]; then
   rm ~/.aliases
 fi
@@ -30,8 +30,13 @@ if [ -f ~/.bashrc ]; then
   rm ~/.bashrc
 fi
 
+if [ -f ~/.config/xfce4/terminal/terminalrc ]; then
+  rm ~/.config/xfce4/terminal/terminalrc
+fi
+
 ln -s ~/.dotfiles/shell/aliases ~/.aliases
 ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
+ls -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
 # ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
 
 echo 'Setting up Vim...'
