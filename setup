@@ -1,145 +1,139 @@
 #!/bin/env sh
 
 # Setup my dotfiles for a fresh Xubuntu installation.
-# NOTE: This scripts assumes the dotfiles folder is at path ~/dotfiles
+# Important: this script requires to have ssh configured for GitHub.
 
-# Makes backup of current dotfiles
-echo 'Making backup of current dotfiles...'
-mkdir ~/backup_dotfiles
+# Few steps that need to be run manually:
+# update /etc/apt/sources.list with additional deb-src URIS
+# run wget https://raw.githubusercontent.com/luanrvmood/dotfiles/main/setup -O setup
+# run chmod +x setup
+# run ./setup
 
-if [ -f ~/.config/user-dirs.dirs ]; then mv ~/.config/user-dirs.dirs ~/backup_dotfiles; fi
-if [ -d ~/.config/i3 ]; then mv ~/.config/i3 ~/backup_dotfiles; fi
-if [ -d ~/.config/i3status ]; then mv ~/.config/i3status ~/backup_dotfiles; fi
-if [ -f ~/.gitconfig ]; then mv ~/.gitconfig ~/backup_dotfiles; fi
-if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/backup_dotfiles; fi
-if [ -f ~/.aliases ]; then mv ~/.aliases ~/backup_dotfiles; fi
-if [ -d ~/.vim ]; then mv ~/.vim ~/backup_dotfiles; fi
-if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/backup_dotfiles; fi
-
-echo 'Backup saved at path ~/backup_dotfiles'
-
-echo 'Installing basic packages...'
-sudo apt install -y curl wget
-
-# Install git and download dotfiles from remote repository
-# NOTE: ssh must be already configured for GitHub
-echo 'Setting up git...'
+echo 'Setting up Git...'
+sudo apt update
 sudo apt install -y git
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 
 echo 'Downloading dotfiles...'
-git clone git@github.com:luanrvmood/dotfiles.git
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-
-# Update system default folders (Downloads, Music, Pictures, etc)
-echo 'Setting up system folders...'
-ln -s ~/dotfiles/dotconfig/user-dirs.dirs ~/.config/user-dirs.dirs
-cd
-rm -r Desktop Downloads Music Pictures Public Videos Documents Templates
-mkdir downloads tracks pics videos docs repos
-
-# Install i3 and i3status
-echo 'Setting up i3wm...'
-sudo apt install -y i3
-echo 'exec i3' > ~/.xinitrc
-mkdir ~/.config/i3
-mkdir ~/.config/i3status
-ln -s ~/dotfiles/dotconfig/i3/config ~/.config/i3/config
-ln -s ~/dotfiles/dotconfig/i3status/config ~/.config/i3status/config
-
-# Uninstall xfce4 desktop stuffs and enable i3wm
-echo 'Uninstalling xfce4 desktop environment...'
-sudo apt remove --purge -y xfdestkop4 xfdestkop4-data
-xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
-
-echo 'Installing feh for wallpaper settings...'
-sudo apt install -y feh
-
-i3-msg reload
-
-# Setup bash and aliases
-echo 'Setting up the shell (bash)...'
-ln -s ~/dotfiles/shell/aliases ~/.aliases
-ln -s ~/dotfiles/shell/bashrc ~/.bashrc
-ln -s ~/dotfiles/shell/inputrc ~/.inputrc
+git clone git@github.com:luanrvmood/dotfiles.git ~/.dotfiles
 
 echo 'Setting up JetBrains Mono font...'
+sudo apt install -y curl
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
 
-echo 'Basic system configured! Installing tools...'
+echo 'Setting up the Bash...'
+if [ -f ~/.aliases ]; then
+  rm ~/.aliases
+fi
 
-# Install Vim from source (with OS clipboard support) and setup
-# Dracula colorscheme (https://github.com/dracula/vim)
-#
-# NOTE: Need to update /etc/apt/sources.list with additional deb-src URIS to
-# install Vim dependencies
+if [ -f ~/.bashrc ]; then
+  rm ~/.bashrc
+fi
+
+ln -s ~/.dotfiles/shell/aliases ~/.aliases
+ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
+# ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
+
 echo 'Setting up Vim...'
 sudo apt build-dep -y vim
-git clone git@github.com:vim/vim.git
-cd vim
+git clone git@github.com:vim/vim.git ~/vim
+cd ~/vim
 ./configure --with-x
 make
 sudo make install
 cd
 rm -rf vim
-ln -s ~/dotfiles/editor/vimrc ~/.vimrc
+ln -s ~/.dotfiles/editor/vimrc ~/.vimrc
 
+echo 'Setting up Dracula for Vim...'
 mkdir -p ~/.vim/pack/themes/start
 cd ~/.vim/pack/themes/start
 git clone https://github.com/dracula/vim.git dracula
 cd
 
-echo 'Setting up JavaScript syntax...'
+echo 'Setting up JavaScript syntax for Vim...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:pangloss/vim-javascript.git
 cd
 
-echo 'Setting up TypeScript syntax...'
+echo 'Setting up TypeScript syntax for Vim...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
 cd
 
-echo 'Setting up React/JSX syntax...'
+echo 'Setting up React/JSX syntax for Vim...'
 mkdir -p ~/.vim/syntax/start
 cd ~/.vim/syntax/start
 git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
 cd
 
-echo 'Setting up Python syntax...'
-mkdir -p ~/.vim/after/syntax/
-ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
+# TODO: fetch Python syntax file from remote
+# echo 'Setting up Python syntax for Vim...'
+# mkdir -p ~/.vim/after/syntax/
+# ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
 
-echo 'Vim is ready to use!'
-
-echo 'Installing asdf for manage languages installations...'
+echo 'Installing asdf for managing development environments...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 
-echo 'Setting up Python environment...'
-sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
-asdf plugin add python
-asdf install python latest
-
-echo 'Setting up Ruby environment...'
-asdf plugin add ruby
-asdf install ruby latest
-
+# NOTE: need to set installed version globally:
+# asdf global nodejs <VERSION> or asdf global yarn <VERSION>
 echo 'Setting up Node environment...'
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf plugin add nodejs
 asdf install nodejs latest
+asdf plugin add yarn
+asdf install yarn latest
 
-echo 'Installing Typora...'
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt update
-sudo apt install -y typora
+echo 'Setting up system folders...'
+cd
 
-echo 'Installing Google Chrome...'
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list'
-sudo apt update
-sudo apt install -y google-chrome-stable
+if [ -f ~/.config/user-dirs.dirs ]; then
+  rm ~/.config/user-dirs.dirs
+fi
+
+ln -s ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
+rm -rf Desktop Downloads Music Pictures Public Videos Documents Templates
+mkdir downloads docs repos
+
+echo 'Setting up i3wm...'
+sudo apt install -y i3
+echo 'exec i3' > ~/.xinitrc
+mkdir ~/.config/i3
+mkdir ~/.config/i3status
+ln -s ~/.dotfiles/config/i3/config ~/.config/i3/config
+ln -s ~/.dotfiles/config/i3status/config ~/.config/i3status/config
+
+echo 'Uninstalling xfce4 desktop environment...'
+sudo apt remove --purge -y xfdesktop4 xfdesktop4-data
+xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
+
+# echo 'Installing feh for wallpaper settings...'
+# sudo apt install -y feh
+#
+# echo 'Setting up Python environment...'
+# sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+# asdf plugin add python
+# asdf install python latest
+#
+# echo 'Setting up Ruby environment...'
+# asdf plugin add ruby
+# asdf install ruby latest
+#
+# echo 'Installing Typora...'
+# wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+# sudo add-apt-repository 'deb https://typora.io/linux ./'
+# sudo apt update
+# sudo apt install -y typora
+#
+# echo 'Installing Google Chrome...'
+# sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list'
+# sudo apt update
+# sudo apt install -y google-chrome-stable
 
 echo 'DONE!'
+echo 'Restarting...'
+sudo reboot
