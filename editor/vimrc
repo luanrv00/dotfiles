@@ -29,7 +29,7 @@ set numberwidth=1
 set background=dark
 set laststatus=2
 set cursorline
-set guifont=JetBrains\ Mono\ ExtraLight\ 12
+set guifont=JetBrains\ Mono\ ExtraLight\ 11
 
 " statusline used markers:
 "   %< truncation point
