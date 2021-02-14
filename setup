@@ -10,6 +10,7 @@
 # run ./setup
 
 echo 'Installing Git...'
+sudo apt update
 sudo apt install -y git
 
 echo 'Downloading dotfiles...'
