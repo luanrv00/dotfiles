@@ -135,7 +135,7 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -s
 # sudo apt install -y typora
 #
 echo 'Installing Google Chrome...'
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
 sudo apt install ~/downloads/google-chrome
 rm ~/downloads/google-chrome
 
