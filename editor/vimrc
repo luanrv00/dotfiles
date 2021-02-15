@@ -108,6 +108,14 @@ inoremap {;<CR> {<CR>};<ESC>O
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>w :w!<cr>
 
+" NERDTree keybindings
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeFocus<cr>
+
+" Closes Vim when NERDTree is the only window left
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
 " Remove unwanted white spaces
 autocmd FileType typescript,vim,sh,ruby,python,php,javascript,html,css autocmd BufWritePre <buffer> %s/\s\+$//e
 

@@ -56,6 +56,12 @@ cd ~/.vim/pack/themes/start
 git clone https://github.com/dracula/vim.git dracula
 cd
 
+echo 'Setting up NERDTRee for Vim...'
+mkdir -p ~/.vim/plugins/start/
+cd ~/.vim/plugins/start/
+git clone git@github.com:preservim/nerdtree.git
+cd
+
 echo 'Setting up JavaScript syntax for Vim...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
@@ -133,7 +139,7 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -s
 # sudo add-apt-repository 'deb https://typora.io/linux ./'
 # sudo apt update
 # sudo apt install -y typora
-#
+
 echo 'Installing Google Chrome...'
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
 sudo apt install ~/downloads/google-chrome
