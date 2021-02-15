@@ -62,6 +62,12 @@ cd ~/.vim/plugins/start/
 git clone git@github.com:preservim/nerdtree.git
 cd
 
+echo 'Setting up word motion for Vim...'
+mkdir -p ~/.vim/plugins/start/
+cd ~/.vim/plugins/start/
+git clone git@github.com:chaoren/vim-wordmotion.git
+cd
+
 echo 'Setting up JavaScript syntax for Vim...'
 mkdir -p ~/.vim/syntax/start/
 cd ~/.vim/syntax/start/
