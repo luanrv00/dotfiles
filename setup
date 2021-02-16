@@ -39,6 +39,21 @@ ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
 ls -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
 # ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
 
+echo 'Installing asdf for managing development environments...'
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+cd
+
+# NOTE: need to set installed version globally:
+# asdf global nodejs <VERSION> or asdf global yarn <VERSION>
+echo 'Setting up Node environment...'
+asdf plugin add nodejs
+bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+asdf install nodejs latest
+asdf plugin add yarn
+asdf install yarn latest
+
 echo 'Setting up Vim...'
 sudo apt build-dep -y vim
 git clone git@github.com:vim/vim.git ~/vim
@@ -60,6 +75,13 @@ echo 'Setting up NERDTRee for Vim...'
 mkdir -p ~/.vim/plugins/start/
 cd ~/.vim/plugins/start/
 git clone git@github.com:preservim/nerdtree.git
+cd
+
+# Need to install plugins mannually e.g. :CocInstall tsserver
+echo 'Setting up CoC for Vim...'
+mkdir -p ~/.vim/plugins/start/
+cd ~/.vim/plugins/start/
+git clone git@github.com:neoclide/coc.nvim.git
 cd
 
 echo 'Setting up word motion for Vim...'
@@ -90,21 +112,6 @@ cd
 # echo 'Setting up Python syntax for Vim...'
 # mkdir -p ~/.vim/after/syntax/
 # ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
-
-echo 'Installing asdf for managing development environments...'
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf
-git checkout "$(git describe --abbrev=0 --tags)"
-cd
-
-# NOTE: need to set installed version globally:
-# asdf global nodejs <VERSION> or asdf global yarn <VERSION>
-echo 'Setting up Node environment...'
-asdf plugin add nodejs
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-asdf install nodejs latest
-asdf plugin add yarn
-asdf install yarn latest
 
 echo 'Setting up system folders...'
 cd
