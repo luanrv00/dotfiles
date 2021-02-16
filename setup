@@ -95,12 +95,13 @@ echo 'Installing asdf for managing development environments...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
+cd
 
 # NOTE: need to set installed version globally:
 # asdf global nodejs <VERSION> or asdf global yarn <VERSION>
 echo 'Setting up Node environment...'
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf plugin add nodejs
+bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install nodejs latest
 asdf plugin add yarn
 asdf install yarn latest
