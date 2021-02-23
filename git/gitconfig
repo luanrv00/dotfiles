@@ -1,7 +1,7 @@
 [init]
         defaultBranch = main
 [user]
-	name = Luan F. R. Vicente
+	name = Luan Ramos Vicente
 	email = luanrvmood@gmail.com
 [core]
 	editor = vim
