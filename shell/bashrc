@@ -95,3 +95,6 @@ fi
 
 # Adds Yarn bin path
 export PATH="$PATH:$(yarn global bin)"
+
+# Search backwrds on the history
+bind '"\e[A": history-search-backward'
