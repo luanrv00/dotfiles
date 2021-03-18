@@ -1,4 +1,11 @@
 alias ls="ls -hl --color=auto"
 alias lsa="ls -hlA --color=auto"
 alias g="git"
-
+alias gl="g log"
+alias glo="g log --oneline"
+alias gs="g status"
+alias gd="g diff"
+alias gds="g diff --staged"
+alias gck="g checkout"
+alias ga="g add"
+alias gadd="g add -A"
