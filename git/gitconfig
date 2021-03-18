@@ -9,6 +9,8 @@
         prune = true
 [push]
         default = current
+[pull]
+        rebase = true
 [alias]
 	s = status
 	c = commit
