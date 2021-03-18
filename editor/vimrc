@@ -1,4 +1,4 @@
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 set splitright
 set splitbelow
 set wrap
