@@ -2,7 +2,7 @@ filetype indent plugin on
 syntax on
 
 packadd! dracula
-colorscheme dracula
+colorscheme gruvbox
 
 set clipboard=unnamed,unnamedplus
 set splitright
@@ -22,6 +22,9 @@ set lazyredraw
 set nomodeline  " Disable external set commands
 set modelines=0 " Disable external set commands
 set backspace=2 " Enable backspace to work as expected
+set incsearch
+set hlsearch
+set ignorecase
 
 " Identation settings
 set softtabstop=2
@@ -36,6 +39,9 @@ set background=dark
 set laststatus=2
 set cursorline
 set guifont=JetBrains\ Mono\ ExtraLight\ 11
+
+set nojoinspaces " No double spaces with join
+set shiftround   " Round indent
 
 " statusline used markers:
 "   %< truncation point
@@ -112,14 +118,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>w :w!<cr>
 
-" NERDTree keybindings
-nnoremap <leader>t :NERDTreeToggle<cr>
-nnoremap <leader>n :NERDTreeFocus<cr>
-
-" Closes Vim when NERDTree is the only window left
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
-
 " Remove unwanted white spaces
 autocmd FileType typescriptreact,tsx,typescript,vim,sh,ruby,python,php,javascript,html,css autocmd BufWritePre <buffer> %s/\s\+$//e
 
@@ -136,7 +134,7 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-"
+
 " CoC settings
 
 " Show element documentation
@@ -154,7 +152,25 @@ nnoremap <silent> gd :call <SID>show_documentation()<CR>
 " Go to element implementation
 nmap <silent> gi <Plug>(coc-definition)
 
-" enable line numbers
+"
+" NERDTree settings
 let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
+
+" NERDTree keybindings
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeFocus<cr>
+
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
