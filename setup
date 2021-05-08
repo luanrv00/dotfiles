@@ -9,6 +9,10 @@
 # run chmod +x setup
 # run ./setup
 
+echo 'Udating apt packages...'
+sudo apt update
+sudo apt upgrade -y
+
 echo 'Installing Git...'
 sudo apt update
 sudo apt install -y git
@@ -84,27 +88,27 @@ cd ~/.vim/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
 cd
 
-echo 'Setting up word motion for Vim...'
-mkdir -p ~/.vim/plugins/start/
-cd ~/.vim/plugins/start/
-git clone git@github.com:chaoren/vim-wordmotion.git
-cd
+# echo 'Setting up word motion for Vim...'
+# mkdir -p ~/.vim/plugins/start/
+# cd ~/.vim/plugins/start/
+# git clone git@github.com:chaoren/vim-wordmotion.git
+# cd
 
 echo 'Setting up JavaScript syntax for Vim...'
-mkdir -p ~/.vim/syntax/start/
-cd ~/.vim/syntax/start/
+mkdir -p ~/.vim/pack/syntax/start/
+cd ~/.vim/pack/syntax/start/
 git clone git@github.com:pangloss/vim-javascript.git
 cd
 
 echo 'Setting up TypeScript syntax for Vim...'
-mkdir -p ~/.vim/syntax/start/
-cd ~/.vim/syntax/start/
+mkdir -p ~/.vim/pack/syntax/start/
+cd ~/.vim/pack/syntax/start/
 git clone git@github.com:leafgarland/typescript-vim.git
 cd
 
 echo 'Setting up React/JSX syntax for Vim...'
-mkdir -p ~/.vim/syntax/start
-cd ~/.vim/syntax/start
+mkdir -p ~/.vim/pack/syntax/start
+cd ~/.vim/pack/syntax/start
 git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
 cd
 
@@ -136,28 +140,28 @@ echo 'Uninstalling xfce4 desktop environment...'
 sudo apt remove --purge -y xfdesktop4 xfdesktop4-data
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
 
-# echo 'Installing feh for wallpaper settings...'
-# sudo apt install -y feh
-#
-# echo 'Setting up Python environment...'
-# sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
-# asdf plugin add python
-# asdf install python latest
-#
-# echo 'Setting up Ruby environment...'
-# asdf plugin add ruby
-# asdf install ruby latest
-#
+echo 'Installing feh for wallpaper settings...'
+sudo apt install -y feh
+
+echo 'Setting up Python environment...'
+sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+asdf plugin add python
+asdf install python latest
+
+echo 'Setting up Ruby environment...'
+asdf plugin add ruby
+asdf install ruby latest
+
 # echo 'Installing Typora...'
 # wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 # sudo add-apt-repository 'deb https://typora.io/linux ./'
 # sudo apt update
 # sudo apt install -y typora
 
-echo 'Installing Google Chrome...'
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
-sudo apt install ~/downloads/google-chrome
-rm ~/downloads/google-chrome
+# echo 'Installing Google Chrome...'
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
+# sudo apt install ~/downloads/google-chrome
+# rm ~/downloads/google-chrome
 
 echo 'DONE!'
 echo 'Restarting...'
