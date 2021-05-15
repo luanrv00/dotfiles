@@ -76,15 +76,15 @@ git clone https://github.com/dracula/vim.git dracula
 cd
 
 echo 'Setting up NERDTRee for Vim...'
-mkdir -p ~/.vim/plugins/start/
-cd ~/.vim/plugins/start/
+mkdir -p ~/.vim/pack/plugins/start/
+cd ~/.vim/pack/plugins/start/
 git clone git@github.com:preservim/nerdtree.git
 cd
 
 # Need to install plugins mannually e.g. :CocInstall tsserver
 echo 'Setting up CoC for Vim...'
-mkdir -p ~/.vim/plugins/start/
-cd ~/.vim/plugins/start/
+mkdir -p ~/.vim/pack/plugins/start/
+cd ~/.vim/pack/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
 cd
 
