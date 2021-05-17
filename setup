@@ -9,7 +9,7 @@
 # run chmod +x setup
 # run ./setup
 
-echo 'Udating apt packages...'
+echo 'Updating apt packages...'
 sudo apt update
 sudo apt upgrade -y
 
@@ -58,6 +58,15 @@ asdf install nodejs latest
 asdf plugin add yarn
 asdf install yarn latest
 
+echo 'Setting up Python environment...'
+sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+asdf plugin add python
+asdf install python latest
+
+echo 'Setting up Ruby environment...'
+asdf plugin add ruby
+asdf install ruby latest
+
 echo 'Setting up Vim...'
 sudo apt build-dep -y vim
 git clone git@github.com:vim/vim.git ~/vim
@@ -81,12 +90,13 @@ cd ~/.vim/pack/plugins/start/
 git clone git@github.com:preservim/nerdtree.git
 cd
 
-# Need to install plugins mannually e.g. :CocInstall tsserver
 echo 'Setting up CoC for Vim...'
 mkdir -p ~/.vim/pack/plugins/start/
 cd ~/.vim/pack/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
 cd
+
+gem install solargraph # coc-solargraph
 
 # echo 'Setting up word motion for Vim...'
 # mkdir -p ~/.vim/plugins/start/
@@ -143,25 +153,16 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -s
 echo 'Installing feh for wallpaper settings...'
 sudo apt install -y feh
 
-echo 'Setting up Python environment...'
-sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
-asdf plugin add python
-asdf install python latest
-
-echo 'Setting up Ruby environment...'
-asdf plugin add ruby
-asdf install ruby latest
-
 # echo 'Installing Typora...'
 # wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 # sudo add-apt-repository 'deb https://typora.io/linux ./'
 # sudo apt update
 # sudo apt install -y typora
 
-# echo 'Installing Google Chrome...'
-# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
-# sudo apt install ~/downloads/google-chrome
-# rm ~/downloads/google-chrome
+echo 'Installing Google Chrome...'
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
+sudo apt install ~/downloads/google-chrome
+rm ~/downloads/google-chrome
 
 echo 'DONE!'
 echo 'Restarting...'
