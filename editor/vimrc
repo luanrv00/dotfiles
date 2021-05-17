@@ -25,6 +25,7 @@ set backspace=2 " Enable backspace to work as expected
 set incsearch
 set hlsearch
 set ignorecase
+set undofile " Persistent undo, even if you close and reopen Vim
 
 " Identation settings
 set softtabstop=2
@@ -42,6 +43,10 @@ set guifont=JetBrains\ Mono\ ExtraLight\ 11
 
 set nojoinspaces " No double spaces with join
 set shiftround   " Round indent
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
 " statusline used markers:
 "   %< truncation point
@@ -136,6 +141,22 @@ autocmd BufReadPost *
 
 
 " CoC settings
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-gist',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-stylelint',
+  \ 'coc-solargraph',
+  \ ]
+
+nmap <silent> gi <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " Show element documentation
 function! s:show_documentation()
@@ -149,10 +170,18 @@ function! s:show_documentation()
 endfunction
 nnoremap <silent> gd :call <SID>show_documentation()<CR>
 
-" Go to element implementation
-nmap <silent> gi <Plug>(coc-definition)
+" Trigger completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-"
+
 " NERDTree settings
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
@@ -164,13 +193,3 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
