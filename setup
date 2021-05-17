@@ -52,6 +52,7 @@ cd
 # NOTE: need to set installed version globally:
 # asdf global nodejs <VERSION> or asdf global yarn <VERSION>
 echo 'Setting up Node environment...'
+sudo apt install -y dirmngr gpg gawk
 asdf plugin add nodejs
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install nodejs latest
