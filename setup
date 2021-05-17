@@ -162,8 +162,8 @@ sudo apt install -y feh
 
 echo 'Installing Google Chrome...'
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
-sudo apt install ~/downloads/google-chrome
-rm ~/downloads/google-chrome
+sudo apt install ./downloads/google-chrome.deb
+rm ~/downloads/google-chrome.deb
 
 echo 'DONE!'
 echo 'Restarting...'
