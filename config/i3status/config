@@ -28,7 +28,7 @@ volume master {
 
 battery 0 {
         format = "BAT %status %percentage"
-        path = "/sys/class/power_supply/axp288_fuel_gauge/uevent"
+        path = "/sys/class/power_supply/BAT0/uevent"
         format_down = "NO BATTERY"
         status_chr = "CHARGING..."
         status_bat = ""
@@ -43,7 +43,7 @@ memory {
 }
 
 disk "/" {
-        format = "DISK %avail / %total"
+        format = "DISK %used / %total"
 }
 
 tztime local {
