@@ -26,6 +26,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set undofile " Persistent undo, even if you close and reopen Vim
+set undodir="$HOME/.vim/undos"
 
 " Identation settings
 set softtabstop=2
