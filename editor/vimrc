@@ -2,7 +2,7 @@ filetype indent plugin on
 syntax on
 
 packadd! dracula
-colorscheme gruvbox
+colorscheme dracula
 
 set clipboard=unnamed,unnamedplus
 set splitright
