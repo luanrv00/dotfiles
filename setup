@@ -25,6 +25,9 @@ echo 'Setting up JetBrains Mono font...'
 sudo apt install -y curl
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
 
+echo 'Installing tmux...'
+sudo apt install -y tmux
+
 echo 'Setting up the shell...'
 if [ -f ~/.aliases ]; then
   rm ~/.aliases
@@ -38,10 +41,15 @@ if [ -f ~/.config/xfce4/terminal/terminalrc ]; then
   rm ~/.config/xfce4/terminal/terminalrc
 fi
 
+if [ -f ~/.tmux.conf ]; then
+  rm ~/.tmux.conf
+fi
+
 ln -s ~/.dotfiles/shell/aliases ~/.aliases
 ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
 ls -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
 # ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
+ls -s ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
 
 echo 'Installing asdf for managing development environments...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
