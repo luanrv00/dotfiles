@@ -178,6 +178,17 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status -C ~/.config/i3/i3status.conf
+        colors {
+            background #000000
+            statusline #ffffff
+            separator #666666
+
+            focused_workspace  #5faf5f #5faf5f #000000
+            active_workspace   #000000 #5f676a #ffffff
+            inactive_workspace #333333 #000000 #ffffff
+            urgent_workspace   #2f343a #900000 #ffffff
+            binding_mode       #2f343a #900000 #ffffff
+        }
 }
 
 hide_edge_borders both
