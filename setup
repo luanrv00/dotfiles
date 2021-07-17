@@ -57,7 +57,7 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd
 
-# NOTE: need to set installed version globally:
+# NOTE: need to set the installed version globally:
 # asdf global nodejs <VERSION> or asdf global yarn <VERSION>
 echo 'Setting up Node environment...'
 sudo apt install -y dirmngr gpg gawk
@@ -145,7 +145,7 @@ fi
 
 ln -s ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -rf Desktop Downloads Music Pictures Public Videos Documents Templates
-mkdir downloads docs repos
+mkdir downloads docs repos pics tmp
 
 echo 'Setting up i3wm...'
 sudo apt install -y i3
