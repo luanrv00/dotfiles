@@ -48,7 +48,7 @@ fi
 ln -s ~/.dotfiles/shell/aliases ~/.aliases
 ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
 ls -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
-# ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
+ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
 ls -s ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
 
 echo 'Installing asdf for managing development environments...'
@@ -75,6 +75,10 @@ asdf install python latest
 echo 'Setting up Ruby environment...'
 asdf plugin add ruby
 asdf install ruby latest
+
+echo 'Setting up Elixir environment...'
+asdf plugin add elixir
+asdf install elixir latest
 
 echo 'Setting up Vim...'
 sudo apt build-dep -y vim
@@ -130,6 +134,11 @@ mkdir -p ~/.vim/pack/syntax/start
 cd ~/.vim/pack/syntax/start
 git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
 cd
+
+echo 'Setting up Elixir syntax for Vim...'
+mkdir -p ~/.vim/pack/syntax/start
+cd ~/.vim/pack/syntax/start
+git clone git@github.com:elixir-editors/vim-elixir.git
 
 # TODO: fetch Python syntax file from remote
 # echo 'Setting up Python syntax for Vim...'
