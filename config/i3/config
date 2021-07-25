@@ -183,11 +183,12 @@ bar {
             statusline #ffffff
             separator #666666
 
-            focused_workspace  #5faf5f #5faf5f #000000
-            active_workspace   #000000 #5f676a #ffffff
-            inactive_workspace #333333 #000000 #ffffff
-            urgent_workspace   #2f343a #900000 #ffffff
-            binding_mode       #2f343a #900000 #ffffff
+            # colorclass       border   background  text
+            focused_workspace  #5faf5f  #5faf5f     #000000
+            active_workspace   #333333  #333333     #ffffff
+            inactive_workspace #333333  #000000     #ffffff
+            urgent_workspace   #2f343a  #900000     #ffffff
+            binding_mode       #2f343a  #900000     #ffffff
         }
 }
 
