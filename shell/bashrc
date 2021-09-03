@@ -96,8 +96,8 @@ fi
 # Adds Yarn bin to path
 export PATH="$PATH:$(yarn global bin)"
 
-# Adds bat bin to path
-export PATH="$PATH:$HOME/.asdf/installs/rust/1.53.0/bin/"
+# Adds local/bin to path
+export PATH="$PATH:$HOME/.local/bin"
 
 # Search backwrds on the history
 bind '"\e[A": history-search-backward'

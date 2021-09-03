@@ -51,6 +51,12 @@ ln -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
 ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
 #ln -s ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
 
+echo 'Installing bat...'
+sudo apt install -y bat
+cd
+mkdir -p .local/bin
+ln -s /usr/bin/batcat .local/bin/bat
+
 echo 'Installing asdf for managing development environments...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
