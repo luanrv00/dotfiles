@@ -29,27 +29,11 @@ curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/inst
 #sudo apt install -y tmux
 
 echo 'Setting up the shell...'
-if [ -f ~/.aliases ]; then
-  rm ~/.aliases
-fi
-
-if [ -f ~/.bashrc ]; then
-  rm ~/.bashrc
-fi
-
-if [ -f ~/.config/xfce4/terminal/terminalrc ]; then
-  rm ~/.config/xfce4/terminal/terminalrc
-fi
-
-#if [ -f ~/.tmux.conf ]; then
-#  rm ~/.tmux.conf
-#fi
-
-ln -s ~/.dotfiles/shell/aliases ~/.aliases
-ln -s ~/.dotfiles/shell/bashrc ~/.bashrc
-ln -s ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
-ln -s ~/.dotfiles/shell/inputrc ~/.inputrc
-#ln -s ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/shell/aliases ~/.aliases
+ln -sf ~/.dotfiles/shell/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -sf ~/.dotfiles/shell/inputrc ~/.inputrc
+#ln -sf ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
 
 echo 'Installing bat...'
 sudo apt install -y bat
@@ -97,7 +81,7 @@ make
 sudo make install
 cd
 rm -rf vim
-ln -s ~/.dotfiles/editor/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/editor/vimrc ~/.vimrc
 
 echo 'Setting up Dracula for Vim...'
 mkdir -p ~/.vim/pack/themes/start
@@ -155,12 +139,7 @@ git clone git@github.com:elixir-editors/vim-elixir.git
 
 echo 'Setting up system folders...'
 cd
-
-if [ -f ~/.config/user-dirs.dirs ]; then
-  rm ~/.config/user-dirs.dirs
-fi
-
-ln -s ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
+ln -sf ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -rf Desktop Downloads Music Pictures Public Videos Documents Templates
 mkdir downloads docs pics codes
 
