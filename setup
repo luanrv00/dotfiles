@@ -162,7 +162,7 @@ fi
 
 ln -s ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -rf Desktop Downloads Music Pictures Public Videos Documents Templates
-mkdir downloads docs repos pics tmp
+mkdir downloads docs pics codes
 
 echo 'Setting up i3wm...'
 sudo apt install -y i3
