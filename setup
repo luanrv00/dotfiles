@@ -169,6 +169,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -
 sudo apt install ./downloads/google-chrome.deb
 rm ~/downloads/google-chrome.deb
 
+echo 'Installing youtube-dl...'
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ~/.local/bin/youtube-dl
+chmod +x ~/.local/bin/youtube-dl
+
 echo 'DONE!'
 echo 'Restarting...'
 sudo reboot
