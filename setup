@@ -25,15 +25,15 @@ echo 'Setting up JetBrains Mono font...'
 sudo apt install -y curl
 curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh | bash -
 
-#echo 'Installing tmux...'
-#sudo apt install -y tmux
+echo 'Installing tmux...'
+sudo apt install -y tmux
 
 echo 'Setting up the shell...'
 ln -sf ~/.dotfiles/shell/aliases ~/.aliases
 ln -sf ~/.dotfiles/shell/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
 ln -sf ~/.dotfiles/shell/inputrc ~/.inputrc
-#ln -sf ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
 
 echo 'Installing bat...'
 sudo apt install -y bat
