@@ -173,6 +173,12 @@ echo 'Installing youtube-dl...'
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ~/.local/bin/youtube-dl
 chmod +x ~/.local/bin/youtube-dl
 
+echo 'Uninstalling LibreOffice...'
+sudo apt remove --purge libreoffice*
+
+echo 'Uninstalling pidgin...'
+sudo apt remove --purge pidgin
+
 echo 'DONE!'
 echo 'Restarting...'
 sudo reboot
