@@ -51,6 +51,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd
+source ~/.bashrc
 
 # NOTE: need to set the installed version globally
 echo 'Setting up Node environment...'
