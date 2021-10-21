@@ -11,7 +11,12 @@
 
 echo 'Updating apt packages...'
 sudo apt update
-sudo apt upgrade -y
+
+echo 'Uninstalling LibreOffice...'
+sudo apt remove --purge libreoffice*
+
+echo 'Uninstalling pidgin...'
+sudo apt remove --purge pidgin
 
 echo 'Installing Git...'
 sudo apt update
@@ -28,7 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/inst
 echo 'Installing tmux...'
 sudo apt install -y tmux
 
-echo 'Setting up the shell...'
+echo 'Setting up bash...'
 ln -sf ~/.dotfiles/shell/aliases ~/.aliases
 ln -sf ~/.dotfiles/shell/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
@@ -47,8 +52,7 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd
 
-# NOTE: need to set the installed version globally:
-# asdf global nodejs <VERSION> or asdf global yarn <VERSION>
+# NOTE: need to set the installed version globally
 echo 'Setting up Node environment...'
 sudo apt install -y dirmngr gpg gawk
 asdf plugin add nodejs
@@ -101,8 +105,6 @@ cd ~/.vim/pack/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
 cd
 
-gem install solargraph # coc-solargraph
-
 # echo 'Setting up word motion for Vim...'
 # mkdir -p ~/.vim/plugins/start/
 # cd ~/.vim/plugins/start/
@@ -137,11 +139,26 @@ git clone git@github.com:elixir-editors/vim-elixir.git
 # mkdir -p ~/.vim/after/syntax/
 # ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
 
+echo 'Installing Typora...'
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt update
+sudo apt install -y typora
+
+echo 'Installing Google Chrome...'
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
+sudo apt install ./downloads/google-chrome.deb
+rm ~/downloads/google-chrome.deb
+
+echo 'Installing youtube-dl...'
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ~/.local/bin/youtube-dl
+chmod +x ~/.local/bin/youtube-dl
+
 echo 'Setting up system folders...'
 cd
 ln -sf ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
 rm -rf Desktop Downloads Music Pictures Public Videos Documents Templates
-mkdir downloads docs pics codes
+mkdir downloads docs pics codes tracks tv
 
 echo 'Setting up i3wm...'
 sudo apt install -y i3
@@ -155,30 +172,17 @@ echo 'Uninstalling xfce4 desktop environment...'
 sudo apt remove --purge -y xfdesktop4 xfdesktop4-data
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
 
-echo 'Installing feh for wallpaper settings...'
-sudo apt install -y feh
-
-# echo 'Installing Typora...'
-# wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-# sudo add-apt-repository 'deb https://typora.io/linux ./'
-# sudo apt update
-# sudo apt install -y typora
-
-echo 'Installing Google Chrome...'
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/downloads/google-chrome.deb
-sudo apt install ./downloads/google-chrome.deb
-rm ~/downloads/google-chrome.deb
-
-echo 'Installing youtube-dl...'
-curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ~/.local/bin/youtube-dl
-chmod +x ~/.local/bin/youtube-dl
-
-echo 'Uninstalling LibreOffice...'
-sudo apt remove --purge libreoffice*
-
-echo 'Uninstalling pidgin...'
-sudo apt remove --purge pidgin
+echo 'Upgrading system packages...'
+sudo apt update
+sudo apt upgrade -y
 
 echo 'DONE!'
 echo 'Restarting...'
-sudo reboot
+echo 'Restarting...'
+echo 'Restarting...'
+reboot
+
+# Things to do after reboot:
+#
+# gem install solargraph (for coc-solargraph)
+# asdf global <env> <version> (for each language installed)
