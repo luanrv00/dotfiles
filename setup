@@ -155,6 +155,9 @@ echo 'Installing youtube-dl...'
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ~/.local/bin/youtube-dl
 chmod +x ~/.local/bin/youtube-dl
 
+echo 'Setting up screenshot utilities...'
+sudo apt install -y maim xclip
+
 echo 'Setting up system folders...'
 cd
 ln -sf ~/.dotfiles/config/user-dirs.dirs ~/.config/user-dirs.dirs
