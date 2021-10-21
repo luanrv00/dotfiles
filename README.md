@@ -31,3 +31,17 @@
 ##### References
 
 - emmet cheat sheet: https://docs.emmet.io/cheat-sheet/
+       
+## Instructions for ideapad S145
+
+**Fixing touchpad not working**
+
+A patch is already automated in `setup` script. Just follow two steps bellow:
+
+- set kernel parameters `i8042.nopnp=1 pci=nocrs` in `/etc/default/grub`
+- run `sudo update-grub`
+
+**Refs**
+
+- https://www.reddit.com/r/linuxquestions/comments/f9h0q4/comment/fmg277m
+- https://askubuntu.com/a/19487
