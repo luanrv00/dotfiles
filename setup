@@ -107,6 +107,12 @@ cd ~/.vim/pack/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
 cd
 
+echo 'Setting up emmet for Vim...'
+mkdir -p ~/.vim/pack/plugins/start/
+cd ~/.vim/pack/plugins/start/
+git clone git@github.com:mattn/emmet-vim.git
+cd
+
 # echo 'Setting up word motion for Vim...'
 # mkdir -p ~/.vim/plugins/start/
 # cd ~/.vim/plugins/start/

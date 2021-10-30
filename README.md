@@ -1,4 +1,6 @@
-## Screenshot key bindings
+## key bindings
+
+### for screenshotting
 
 | Feature | Shortcut |
 | :----- | :------ |
@@ -8,3 +10,13 @@
 | Clipboard Full Screen | `Ctrl` + `PrtScrn` |
 | Clipboard Selection | `Ctrl` + `Shift` + `PrtScrn` |
 | Clipboard Active Window | `Ctrl` + `Super` + `PrtScrn` |
+
+### for vim
+
+`<leader>t` for opening/closing **NERDTree**
+
+**while coding**
+`<c-e>,` for trigger **emmet**
+`<tab>` for trigger auto completion
+`gd` for opening a target documentation
+`<leader>h` for see a target highlight group
