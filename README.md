@@ -20,3 +20,8 @@
 `<tab>` for trigger auto completion
 `gd` for opening a target documentation
 `<leader>h` for see a target highlight group
+
+
+##### References
+
+- emmet cheat sheet: https://docs.emmet.io/cheat-sheet/
