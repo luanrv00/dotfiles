@@ -13,14 +13,13 @@
 
 ### for vim
 
-`<leader>t` for opening/closing **NERDTree**
-
-**while coding**
-`<c-e>,` for trigger **emmet**
-`<tab>` for trigger auto completion
-`gd` for opening a target documentation
-`<leader>h` for see a target highlight group
-
+| Key binding | Action |
+| :----- | :------ |
+| `<c-e>,` | for trigger **emmet** |
+| `<tab>` | for trigger auto completion |
+| `gd` | for opening a target documentation |
+| `<leader>h` | for see a target highlight group |
+| `<leader>t` | for opening/closing **NERDTree** |
 
 ##### References
 
