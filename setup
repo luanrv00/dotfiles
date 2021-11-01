@@ -113,6 +113,12 @@ cd ~/.vim/pack/plugins/start/
 git clone git@github.com:mattn/emmet-vim.git
 cd
 
+echo 'Setting up WakaTime for Vim...'
+mkdir -p ~/.vim/pack/plugins/start/
+cd ~/.vim/pack/plugins/start/
+git clone git@github.com:wakatime/vim-wakatime.git
+cd
+
 # echo 'Setting up word motion for Vim...'
 # mkdir -p ~/.vim/plugins/start/
 # cd ~/.vim/plugins/start/
