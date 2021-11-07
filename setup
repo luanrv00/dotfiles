@@ -163,7 +163,6 @@ echo 'Installling docker-compose...'
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
 sudo chmod +x ~/.local/bin/docker-compose
 
-
 echo 'Installing Typora...'
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
