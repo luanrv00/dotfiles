@@ -14,3 +14,5 @@ alias gcm="g commit -m"
 alias gcma="g commit --amend"
 alias gca="g commit --amend"
 alias gcadd="g commit -a"
+
+alias compose="docker-compose"

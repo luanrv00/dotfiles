@@ -32,13 +32,13 @@ curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/inst
 
 echo 'Installing tmux...'
 sudo apt install -y tmux
+ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 echo 'Setting up bash...'
-ln -sf ~/.dotfiles/shell/aliases ~/.aliases
-ln -sf ~/.dotfiles/shell/bashrc ~/.bashrc
-ln -sf ~/.dotfiles/shell/terminalrc ~/.config/xfce4/terminal/terminalrc
-ln -sf ~/.dotfiles/shell/inputrc ~/.inputrc
-ln -sf ~/.dotfiles/shell/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/bash/aliases ~/.aliases
+ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/bash/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -sf ~/.dotfiles/bash/inputrc ~/.inputrc
 
 echo 'Installing bat...'
 sudo apt install -y bat
@@ -92,7 +92,7 @@ make
 sudo make install
 cd
 rm -rf vim
-ln -sf ~/.dotfiles/editor/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 
 echo 'Setting up Dracula for Vim...'
 mkdir -p ~/.vim/pack/themes/start
@@ -107,7 +107,7 @@ git clone git@github.com:preservim/nerdtree.git
 cd
 
 echo 'Setting up CoC for Vim...'
-ln -sf ~/.dotfiles/editor/coc-settings.json ~/.vim
+ln -sf ~/.dotfiles/vim/coc-settings.json ~/.vim
 mkdir -p ~/.vim/pack/plugins/start/
 cd ~/.vim/pack/plugins/start/
 git clone git@github.com:neoclide/coc.nvim.git
