@@ -210,6 +210,9 @@ echo 'Upgrading system packages...'
 sudo apt update
 sudo apt upgrade -y
 
+echo 'Updating grub to apply kernel patch to fix touchpad not working on ideapad s145...'
+sudo update-grub
+
 echo 'Removing temp executable file...'
 cd
 rm setup
