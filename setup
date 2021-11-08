@@ -218,8 +218,3 @@ echo 'Restarting...'
 echo 'Restarting...'
 echo 'Restarting...'
 reboot
-
-# Things to do after reboot:
-#
-# gem install solargraph (for coc-solargraph)
-# asdf global <env> <version> (for each language installed)
