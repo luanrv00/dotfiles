@@ -203,6 +203,10 @@ echo 'Upgrading system packages...'
 sudo apt update
 sudo apt upgrade -y
 
+echo 'Removing temp executable file...'
+cd
+rm setup
+
 echo 'DONE!'
 echo 'Restarting...'
 echo 'Restarting...'
