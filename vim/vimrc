@@ -50,6 +50,14 @@ set shiftround   " Round indent
 " delays and poor user experience.
 set updatetime=300
 
+" tks @philss for two mappings below 👍(from https://github.com/philss/dotfiles)
+" Mapping <tab> to change tabs navigation
+noremap <tab> :tabnext<CR>
+noremap <S-tab> :tabprevious<CR>
+
+" Open file under cursor in another tab
+noremap of <C-w>gf<CR>
+
 " statusline used markers:
 "   %< truncation point
 "   %f full path to file
