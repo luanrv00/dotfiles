@@ -141,6 +141,8 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+" Changes current working directory
+nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
 " CoC settings
 let g:coc_global_extensions = [

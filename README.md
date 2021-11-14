@@ -13,13 +13,14 @@
 
 ### for vim
 
-| Key binding | Action                             |
-| :---------- | :--------------------------------- |
-| `<c-e>,`    | for trigger **emmet**              |
-| `<tab>`     | for trigger auto completion        |
-| `gd`        | for opening a target documentation |
-| `<leader>h` | for see a target highlight group   |
-| `<leader>t` | for opening/closing **NERDTree**   |
+| Key binding | Action                              |
+| :---------- | :---------------------------------- |
+| `<c-e>,`    | to trigger **emmet**                |
+| `<tab>`     | to trigger auto completion          |
+| `gd`        | to open a target documentation      |
+| `<leader>h` | to see a target highlight group     |
+| `<leader>t` | to open/close **NERDTree**          |
+| `<leader>d` | to change current working directory |
 
 **Copying from tmux pane to clipboard**
 
