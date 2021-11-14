@@ -29,6 +29,8 @@
 3. Use arrow keys to go to the end of text you want to copy. Press `CTRL+w` to copy into Tmux buffer.
 4. Press `CTRL+b,` `]` to paste in a possibly different Tmux pane/window.
 
+**Obs.:** it is possible copying using mouse as well.
+
 ##### References
 
 - emmet cheat sheet: https://docs.emmet.io/cheat-sheet/
