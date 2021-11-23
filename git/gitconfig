@@ -11,10 +11,3 @@
         default = current
 [pull]
         rebase = true
-[alias]
-	s = status
-	c = commit
-	br = branch
-	r = rebase
-	d = diff
-	ds = diff --staged
