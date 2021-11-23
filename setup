@@ -154,11 +154,18 @@ echo 'Setting up Elixir syntax for Vim...'
 mkdir -p ~/.vim/pack/syntax/start
 cd ~/.vim/pack/syntax/start
 git clone git@github.com:elixir-editors/vim-elixir.git
+cd
 
 # TODO: fetch Python syntax file from remote
 # echo 'Setting up Python syntax for Vim...'
 # mkdir -p ~/.vim/after/syntax/
 # ln -s ~/dotfiles/dotvim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
+
+echo 'Setting up WakaTime...'
+mkdir -p ~/.vim/pack/plugins/start
+cd ~/.vim/pack/plugins/start
+git clone git@github.com:wakatime/vim-wakatime.git
+cd
 
 echo 'Installing Docker...'
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
