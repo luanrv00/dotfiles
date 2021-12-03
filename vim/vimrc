@@ -196,6 +196,7 @@ inoremap <silent><expr> <TAB>
 " NERDTree settings
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
 " NERDTree keybindings
 nnoremap <leader>t :NERDTreeToggle<cr>
