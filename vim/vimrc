@@ -205,6 +205,10 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
 
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
 
 " vim-prettier settings
 let g:prettier#autoformat = 1
