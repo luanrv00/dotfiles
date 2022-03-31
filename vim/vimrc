@@ -25,7 +25,7 @@ set modelines=0 " Disable external set commands
 set backspace=2 " Enable backspace to work as expected
 set incsearch
 set hlsearch
-set ignorecase
+" set ignorecase
 set undofile " Persistent undo, even if you close and reopen Vim
 set undodir="$HOME/.vim/undos"
 
