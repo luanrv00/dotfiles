@@ -35,7 +35,9 @@ sudo apt install -y tmux
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 echo 'Setting up bash...'
+chsh -s /bin/bash
 ln -sf ~/.dotfiles/bash/aliases ~/.aliases
+ln -sf ~/.dotfiles/bash/bash_profile ~/.bash_profile
 ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/bash/terminalrc ~/.config/xfce4/terminal/terminalrc
 ln -sf ~/.dotfiles/bash/inputrc ~/.inputrc
