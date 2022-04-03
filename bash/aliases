@@ -30,3 +30,4 @@ alias gps="g push"
 alias d="docker"
 alias c="docker-compose"
 
+alias tx="tmuxinator"
