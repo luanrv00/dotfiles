@@ -72,41 +72,41 @@ noremap of <C-w>gf<CR>
 "   %P percentage through buffer (smart, includes 'Top' and 'Bot' markers)
 set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 
-hi Normal ctermbg=232 ctermfg=255
-hi Comment ctermfg=245 ctermbg=232
-hi CursorLine ctermbg=233 cterm=none
-hi LineNr ctermfg=240 cterm=none
-hi CursorLineNr ctermfg=240 cterm=none
-hi StatusLine ctermbg=233 ctermfg=255 cterm=none
-hi StatusLineNc ctermbg=233 ctermfg=245 cterm=none
-hi ColorColumn ctermbg=233
-hi VertSplit ctermbg=232 ctermfg=240 cterm=none
-hi TabLine ctermbg=233 ctermfg=245 cterm=none
-hi TabLineSel ctermbg=240 ctermfg=255 cterm=none
-hi TabLineFill ctermbg=233 ctermfg=245 cterm=none
-hi Folded ctermbg=232 ctermfg=240 cterm=none
+"hi Normal ctermbg=232 ctermfg=255
+"hi Comment ctermfg=245 ctermbg=232
+hi CursorLine ctermbg=234 cterm=none
+"hi LineNr ctermfg=240 cterm=none
+"hi CursorLineNr ctermfg=240 cterm=none
+hi StatusLine ctermbg=234 ctermfg=255 cterm=none
+hi StatusLineNc ctermbg=235 ctermfg=245 cterm=none
+hi ColorColumn ctermbg=235
+hi VertSplit ctermbg=235 ctermfg=235 cterm=none
+hi TabLine ctermbg=235 ctermfg=245 cterm=none
+hi TabLineSel ctermbg=233 ctermfg=255 cterm=none
+hi TabLineFill ctermbg=235 ctermfg=245 cterm=none
+hi Folded ctermbg=235 ctermfg=255 cterm=none
 
-hi DraculaCyanItalic cterm=none
-hi DraculaGreenItalic cterm=none
-hi DraculaOrangeItalic cterm=none
-hi DraculaPurpleItalic cterm=none
+"hi DraculaCyanItalic cterm=none
+"hi DraculaGreenItalic cterm=none
+"hi DraculaOrangeItalic cterm=none
+"hi DraculaPurpleItalic cterm=none
 
-hi! link pythonTripleQuotes Comment
-hi! link pythonDocstring Comment
-hi! link pythonDecorator Comment
-hi! link pythonDecoratorName Comment
-hi! link pythonDocTest Comment
-hi! link pythonDocTestValue Comment
+"hi! link pythonTripleQuotes Comment
+"hi! link pythonDocstring Comment
+"hi! link pythonDecorator Comment
+"hi! link pythonDecoratorName Comment
+"hi! link pythonDocTest Comment
+"hi! link pythonDocTestValue Comment
 
-hi! link rubySharpBang Comment
+"hi! link rubySharpBang Comment
 
-hi! link gitCommitSummary Normal
+"hi! link gitCommitSummary Normal
 
-hi! link javaCommentTitle Comment
-hi! link javaDocTags Comment
-hi! link javaDocParam Comment
+"hi! link javaCommentTitle Comment
+"hi! link javaDocTags Comment
+"hi! link javaDocParam Comment
 
-hi! link htmlLink Normal
+"hi! link htmlLink Normal
 
 let mapleader = "-"
 
