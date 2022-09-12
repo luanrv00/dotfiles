@@ -103,8 +103,6 @@ export PATH="$PATH:$(yarn global bin)"
 # Adds local/bin to path
 export PATH="$PATH:$HOME/.local/bin"
 
-export GITLAB_AUTH_TOKEN="glpat-_kpaQAwxan5RYWMy_dXt"
-
 # Search backwrds on the history
 bind '"\e[A": history-search-backward'
 
