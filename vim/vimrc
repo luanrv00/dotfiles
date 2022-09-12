@@ -162,6 +162,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-stylelint',
   \ 'coc-solargraph',
+  \ 'coc-snippets'
   \ ]
 
 nmap <silent> gi <Plug>(coc-definition)
