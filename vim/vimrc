@@ -86,10 +86,10 @@ hi TabLineSel ctermbg=233 ctermfg=255 cterm=none
 hi TabLineFill ctermbg=235 ctermfg=245 cterm=none
 hi Folded ctermbg=235 ctermfg=255 cterm=none
 
-"hi DraculaCyanItalic cterm=none
-"hi DraculaGreenItalic cterm=none
-"hi DraculaOrangeItalic cterm=none
-"hi DraculaPurpleItalic cterm=none
+hi DraculaCyanItalic cterm=none
+hi DraculaGreenItalic cterm=none
+hi DraculaOrangeItalic cterm=none
+hi DraculaPurpleItalic cterm=none
 
 "hi! link pythonTripleQuotes Comment
 "hi! link pythonDocstring Comment
