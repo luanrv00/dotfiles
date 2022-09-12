@@ -1,9 +1,4 @@
 filetype indent plugin on
-syntax on
-
-packadd! dracula_pro
-let g:dracula_colorterm = 0
-colorscheme dracula_pro
 
 set clipboard=unnamed,unnamedplus
 set splitright
@@ -28,8 +23,9 @@ set hlsearch
 " set ignorecase
 set undofile " Persistent undo, even if you close and reopen Vim
 set undodir="$HOME/.vim/undos"
+set nojoinspaces " No double spaces with join
 
-" Identation settings
+" Indentation settings
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
@@ -44,20 +40,23 @@ set laststatus=2
 set cursorline
 set guifont=JetBrains\ Mono\ ExtraLight\ 11
 
-set nojoinspaces " No double spaces with join
-set shiftround   " Round indent
+" colorscheme
+syntax on
+packadd! dracula_pro
+colorscheme dracula_pro
+let g:dracula_colorterm = 0
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
 
-" tks @philss for two mappings below 👍(from https://github.com/philss/dotfiles)
+" tks @philss for the mappings below 👍(from https://github.com/philss/dotfiles)
 " Mapping <tab> to change tabs navigation
 noremap <tab> :tabnext<CR>
 noremap <S-tab> :tabprevious<CR>
 
 " Open file under cursor in another tab
-noremap of <C-w>gf<CR>
+" noremap of <C-w>gf<CR>
 
 " statusline used markers:
 "   %< truncation point
@@ -72,9 +71,9 @@ noremap of <C-w>gf<CR>
 "   %P percentage through buffer (smart, includes 'Top' and 'Bot' markers)
 set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
 
-"hi Normal ctermbg=232 ctermfg=255
+hi Normal ctermbg=233 ctermfg=253
 "hi Comment ctermfg=245 ctermbg=232
-hi CursorLine ctermbg=234 cterm=none
+hi CursorLine ctermbg=232 cterm=none
 "hi LineNr ctermfg=240 cterm=none
 "hi CursorLineNr ctermfg=240 cterm=none
 hi StatusLine ctermbg=234 ctermfg=255 cterm=none
@@ -111,10 +110,10 @@ hi DraculaPurpleItalic cterm=none
 let mapleader = "-"
 
 " Identify the highlight group under the cursor
-map <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-\ . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" map <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+" \ . '> trans<'
+" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Make splits navigation easies
 nnoremap <c-k> <c-w>k
@@ -154,6 +153,7 @@ autocmd BufReadPost *
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
 " CoC settings
+let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-html',
@@ -167,9 +167,10 @@ let g:coc_global_extensions = [
 
 nmap <silent> gi <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>x  <Plug>(coc-convert-snippet)
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Show element documentation
 function! s:show_documentation()
@@ -184,15 +185,18 @@ endfunction
 nnoremap <silent> gd :call <SID>show_documentation()<CR>
 
 " Trigger completion
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+let g:coc_snippet_next = '<tab>'
+
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#pum#visible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ CheckBackSpace() ? "\<TAB>" :
       \ coc#refresh()
+
+function! CheckBackSpace() abort
+    let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
 
 
 " NERDTree settings
@@ -202,7 +206,7 @@ let NERDTreeMinimalUI=1
 
 " NERDTree keybindings
 nnoremap <leader>t :NERDTreeToggle<cr>
-nnoremap <leader>n :NERDTreeFocus<cr>
+nnoremap <leader>r :NERDTreeFocus<cr>
 
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
@@ -212,7 +216,3 @@ autocmd FileType nerdtree setlocal relativenumber
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#exec_cmd_async = 1
-
-
-" emmet settings
-let g:user_emmet_leader_key='<c-e>'
