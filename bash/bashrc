@@ -99,4 +99,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # Search backwrds on the history
 bind '"\e[A": history-search-backward'
 
+# loads development env vars in general
+. ~/.env.global
+
 echo "Wake up, $USER..."
