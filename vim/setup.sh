@@ -10,7 +10,9 @@ ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 
 echo 'setting up plugins folders...'
 mkdir -p ~/.vim/pack/plugins/start
-cd $_
+
+echo 'changing current working directory...'
+cd ~/.vim/pack/plugins/start
 
 echo 'installing plugin NERDTRee...'
 git clone git@github.com:preservim/nerdtree.git
@@ -30,3 +32,6 @@ git clone git@github.com:leafgarland/typescript-vim.git
 
 echo 'installing syntax react/jsx...'
 git clone git@github.com:MaxMEllon/vim-jsx-pretty.git
+
+echo 'changing back current working directory...'
+cd
