@@ -33,6 +33,8 @@ alias gpl="g pull"
 alias gps="g push"
 alias grb="g rebase"
 alias grbm="g rebase main"
+alias gcp="g cherry-pick"
+alias gcpa="g cherry-pick --abort"
 
 alias d="docker"
 alias c="docker-compose"
