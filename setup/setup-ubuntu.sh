@@ -4,7 +4,7 @@ echo 'initializing dotfiles setup for Ubuntu...'
 echo '___________________________________________'
 
 echo 'updating apt packages...'
-sudo apt update
+sudo apt update -y
 
 . ./ssh/setup.sh
 . ./git/setup.sh
