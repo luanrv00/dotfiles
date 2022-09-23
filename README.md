@@ -1,6 +1,6 @@
 ## key bindings
 
-### keybindings for vim
+## keybindings for vim
 
 | Key binding | Action                              |
 | :---------- | :---------------------------------- |
