@@ -25,7 +25,7 @@ run:
 
 | Key binding | Action                              |
 | :---------- | :---------------------------------- |
-| `<leader>t` | to open/close **NERDTree**          |
-| `<tab>`     | to trigger auto completion          |
-| `gd`        | to open a api documentation         |
+| `<leader>t` | open/close **NERDTree**          |
+| `<tab>`     | trigger auto completion          |
+| `gd`        | open api documentation         |
 | `gi`        | go to implementation                |
