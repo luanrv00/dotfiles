@@ -6,7 +6,6 @@ echo '___________________________________________'
 echo 'updating apt packages...'
 sudo apt update -y
 
-. ./repository/setup.sh
 . ./git/setup.sh
 . ./bash/setup.sh
 . ./tmux/setup.sh
