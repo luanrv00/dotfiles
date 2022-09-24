@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
 echo 'initializing setup for git...'
 echo '_____________________________'

@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
 echo 'initializing dotfiles setup for Ubuntu...'
 echo '___________________________________________'
