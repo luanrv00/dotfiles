@@ -4,7 +4,13 @@ Obs.: this script is currently adapted to setup a fresh Ubuntu installation.
 
 ## running
 
-make script executable:
+download the initial script:
+
+```
+curl https://raw.githubusercontent.com/luanramosvicente/dotfiles/main/setup.sh > setup.sh
+```
+
+make it executable:
 
 ```
 chmod +x setup.sh
