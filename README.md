@@ -1,4 +1,19 @@
-## key bindings
+# ~/.dotfiles
+
+Obs.: this script is currently adapted to setup a fresh Ubuntu installation. 
+
+## running
+
+make script executable:
+
+```
+chmod +x setup.sh
+```
+
+run:
+```
+./setup.sh
+```
 
 ## keybindings for vim
 
