@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
+echo "\n\n"
 echo 'initializing setup for bash...'
-echo '_____________________________'
+echo '__________________________________________________________________________'
 
 echo 'setting bash as default shell...'
 chsh -s /bin/bash

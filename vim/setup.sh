@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
+echo "\n\n"
 echo 'initializing setup for vim...'
-echo '_____________________________'
+echo '__________________________________________________________________________'
 
 # TODO: install vim if not already
 

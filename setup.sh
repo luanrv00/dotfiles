@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
+echo "\n\n"
 echo 'initializing dotfiles setup for Ubuntu...'
-echo '___________________________________________'
+echo '__________________________________________________________________________'
 
 echo 'installing git...'
 sudo apt install -y git

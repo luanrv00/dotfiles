@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
+echo "\n\n"
 echo 'initializing setup for nodejs...'
-echo '______________________________'
+echo '__________________________________________________________________________'
 
 echo 'installing latest version of nodejs...'
 asdf plugin add nodejs
