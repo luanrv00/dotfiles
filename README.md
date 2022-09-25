@@ -17,8 +17,16 @@ chmod +x setup.sh
 ```
 
 run:
+
 ```
 ./setup.sh
+```
+
+to install only a specific module, use:
+
+```
+# ./setup.sh <module>
+# ./setup.sh vim
 ```
 
 ## keybindings for vim

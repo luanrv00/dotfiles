@@ -10,4 +10,8 @@ sudo apt install -y git
 echo 'downloading dotfiles from remote repository...'
 git clone https://github.com/luanramosvicente/dotfiles.git ~/.dotfiles
 
-. ~/.dotfiles/setup/setup-ubuntu.sh
+if [ $# -eq 0 ]; then
+  . ~/.dotfiles/setup/setup-ubuntu.sh
+else
+  . ~/.dotfiles/$1/setup.sh
+fi
