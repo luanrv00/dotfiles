@@ -1,6 +1,6 @@
 # ~/.dotfiles
 
-Obs.: this script is currently adapted to setup a fresh Ubuntu installation. 
+Obs.: this script is currently adapted to setup a fresh Ubuntu 20.04 installation. 
 
 ## running
 
