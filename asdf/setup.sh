@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 echo 'initializing setup for asdf...'
-echo "_____________________________________________________________________\n\n"
+echo '_____________________________'
 
 echo 'installing asdf...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
