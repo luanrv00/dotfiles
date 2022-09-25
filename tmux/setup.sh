@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 echo 'initializing setup for tmux...'
-echo '_____________________________'
+echo "_____________________________________________________________________\n\n"
 
 echo 'installing tmux...'
 sudo apt install -y tmux
