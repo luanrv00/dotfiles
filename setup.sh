@@ -10,8 +10,8 @@ echo 'downloading dotfiles from remote repository...'
 git clone https://github.com/luanramosvicente/dotfiles.git ~/.dotfiles
 
 # TODO: temporary pre setup for testing process
-cd ./dotfiles
+cd ~/.dotfiles
 git checkout refactor
 cd
 
-. setup/setup-ubuntu.sh
+. ~/.dotfiles/setup/setup-ubuntu.sh
