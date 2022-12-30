@@ -4,7 +4,15 @@ echo "\n\n"
 echo 'initializing setup for vim...'
 echo '__________________________________________________________________________'
 
-# TODO: install vim if not already
+echo 'installing vim...'
+sudo apt build-dep -y vim
+git clone git@github.com:vim/vim.git ~/vim
+cd ~/vim
+./configure --with-x
+make
+sudo make install
+cd
+rm -rf vim
 
 echo 'copying settings file for vim...'
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
