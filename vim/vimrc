@@ -56,9 +56,9 @@ set updatetime=300
 noremap <tab> :tabnext<CR>
 noremap <S-tab> :tabprevious<CR>
 
-noremap fj <esc>
-vnoremap fj <esc>
+nnoremap fj <esc>
 inoremap fj <esc>
+vnoremap fj <esc>
 
 " Open file under cursor in another tab
 " noremap of <C-w>gf<CR>
