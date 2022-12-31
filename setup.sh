@@ -7,6 +7,9 @@
 #     ./setup.sh
 #     ./setup.sh <module> (e.g setup.sh vim)
 #
+# usage:
+# ./setup
+# ./setup [module] (e.g. ./setup vim)
 if [ $# -eq 0 ]; then
   . ~/.dotfiles/setup/setup-ubuntu.sh
 else
