@@ -1,8 +1,10 @@
 # ~/.dotfiles
 
-Obs.: this script is currently adapted to setup a fresh Ubuntu 22.04 installation. 
+this script is intended to setup a fresh installation of **Ubuntu 22.04** and **WSL on Windows 10**.
 
 ## running
+
+_Make sure to choose the OS on available branches to download the correct script_
 
 download the initial script:
 
@@ -16,13 +18,15 @@ make it executable:
 chmod +x setup.sh
 ```
 
-run:
+### usage:
+
+**to install all configs:**
 
 ```
 ./setup.sh
 ```
 
-to install only a specific module, use:
+**to install only a specific module:**
 
 ```
 ./setup.sh <module> # e.g ./setup.sh vim
