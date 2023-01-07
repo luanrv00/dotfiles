@@ -51,3 +51,5 @@ alias tk="tmux kill-session -t"
 alias tx="tmuxinator"
 alias txs="tmuxinator start"
 alias txe="tmuxinator edit"
+
+alias v="vim"
