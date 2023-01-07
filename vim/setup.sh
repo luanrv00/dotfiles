@@ -8,7 +8,7 @@ echo 'installing vim...'
 sudo apt build-dep -y vim
 git clone git@github.com:vim/vim.git ~/vim
 cd ~/vim
-./configure --with-x
+./configure --with-x --enable-python3interp
 make
 sudo make install
 cd
