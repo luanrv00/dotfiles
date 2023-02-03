@@ -33,7 +33,7 @@ to install only a specific module, use:
 | Key binding | Action                              |
 | :---------- | :---------------------------------- |
 | `<leader>t` | open/close **NERDTree**          |
-| `<tab>`     | trigger auto completion          |
+| `<tab>`     | navigate through tabs          |
 | `gd`        | open api documentation         |
 | `gi`        | go to implementation                |
 
@@ -41,9 +41,12 @@ to install only a specific module, use:
 
 | alias       | command                              |
 | :---------- | :---------------------------------- |
+| ls          | `ls -hl --color=auto` |
+| lsa         | `ls -hlA --color=auto` |
+|             |  |
 | d           | `docker` |
 | c           | `docker-compose` |
-| ---         | `---` |
+|             |  |
 | t           | `tmux` |
 | tn          | `tmux new -s` |
 | ta          | `tmux attach -t` |
@@ -52,52 +55,51 @@ to install only a specific module, use:
 | tx          | `tmuxinator` |
 | txs         | `tmuxinator start` |
 | txe         | `tmuxinator edit` |
-| ---         | `---` |
-| **git**     | `---` |
+|             |  |
 | g           | `git` |
-| gl           | `git` |
-| glc           | `git` |
-| glg           | `git` |
-| ---           | `---` |
-| gs           | `git` |
-| gd           | `git` |
-| gds           | `git` |
-| ---           | `---` |
-| gcl           | `git` |
-| gck           | `git` |
-| gckm           | `git` |
-| ---           | `---` |
-| gaa           | `git` |
-| gc           | `git` |
-| gcm           | `git` |
-| gca           | `git` |
-| gcaa           | `git` |
-| gcme           | `git` |
-| ---           | `---` |
-| gb           | `git` |
-| gba           | `git` |
-| gbm           | `git` |
-| gbd           | `git` |
-| ---           | `---` |
-| grb           | `git` |
-| grbm           | `git` |
-| grbi           | `git` |
-| grba           | `git` |
-| grbc           | `git` |
-| grbs           | `git` |
-| ---           | `---` |
-| gr           | `git` |
-| grs           | `git` |
-| grr           | `git` |
-| ---           | `---` |
-| gpl           | `git` |
-| gps           | `git` |
-| ---           | `---` |
-| gcp           | `git` |
-| gcpa           | `git` |
-| ---           | `---` |
-| gst           | `git` |
-| gsta           | `git` |
-| gstd           | `git` |
-| gstl           | `git` |
-| gstad           | `git` |
+| gs           | `git status` |
+| gl           | `git log` |
+| glc           | `git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'` |
+| glg           | `git --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'` |
+|             |  |
+| gd           | `git diff` |
+| gds           | `git diff --staged` |
+|             |  |
+| gcl           | `git clone` |
+| gck           | `git checkout` |
+| gckm           | `git checkout main` |
+|               |  |
+| gaa           | `git add -A` |
+| gc           | `git commit` |
+| gcm           | `git commit -m` |
+| gca           | `git commit --amend` |
+| gcaa           | `git commit --all` |
+| gcme           | `git commit --allow-empty` |
+|               | |
+| gb           | `git branch` |
+| gba           | `git branch -a` |
+| gbm           | `git branch -m` |
+| gbd           | `git branch -D` |
+|               | |
+| grb           | `git rebase` |
+| grbm           | `git rebase main` |
+| grbi           | `git rebase -i` |
+| grba           | `git rebase --abort` |
+| grbc           | `git rebase --continue` |
+| grbs           | `git rebase --skip` |
+|               |  |
+| gr           | `git restore` |
+| grs           | `git restore --staged` |
+| grr           | `git reset` |
+|               |  |
+| gpl           | `git pull` |
+| gps           | `git push` |
+|               |  |
+| gcp           | `git cherry-pick` |
+| gcpa           | `git cherry-pick --abort` |
+|               |  |
+| gst           | `git stash` |
+| gsta           | `git stash apply` |
+| gstd           | `git stash drop` |
+| gstl           | `git stash list` |
+| gstad           | `git stash apply && git stash drop` |
