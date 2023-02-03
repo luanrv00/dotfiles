@@ -10,3 +10,4 @@ sudo apt update -y
 . ~/.dotfiles/asdf/setup.sh
 . ~/.dotfiles/ruby/setup.sh
 . ~/.dotfiles/nodejs/setup.sh
+. ~/.dotfiles/utilities/setup.sh
