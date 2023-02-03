@@ -207,6 +207,7 @@ function! CheckBackSpace() abort
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
+let NERDTreeIgnore=['node_modules', '.git']
 
 " NERDTree keybindings
 nnoremap <leader>t :NERDTreeToggle<cr>
