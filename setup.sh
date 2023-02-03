@@ -18,6 +18,7 @@ echo 'downloading dotfiles from remote repository...'
 wget https://github.com/luanrv/dotfiles/archive/refs/heads/ubuntu.zip -O ~/dotfiles.zip
 
 echo 'unziping dotfiles...'
+sudo apt install -y unzip
 unzip ~/dotfiles.zip -d ~/dotfiles
 rm ~/dotfiles.zip
 
