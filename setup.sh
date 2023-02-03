@@ -23,6 +23,7 @@ unzip ~/dotfiles.zip -d ~/dotfiles
 rm ~/dotfiles.zip
 
 echo 'creating folder ~/.dotfiles...'
+rm -rf ~/.dotfiles # TODO: verifies if existis then save a backup
 mv ~/dotfiles/* ~/.dotfiles
 rmdir ~/dotfiles
 
