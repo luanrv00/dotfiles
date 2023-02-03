@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
-
+#
+# script used for setting up a fresh installation of Ubuntu with custom dotfiles
+#
+# Usage:
+#     chmod +x setup.sh
+#     ./setup.sh
+#     ./setup.sh <module> (e.g setup.sh vim)
+#
 echo "\n\n"
 echo 'initializing dotfiles setup for Ubuntu...'
 echo '__________________________________________________________________________'
