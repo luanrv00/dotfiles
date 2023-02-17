@@ -13,3 +13,4 @@ sudo apt update -y
 . ~/.dotfiles/nodejs/setup.sh
 . ~/.dotfiles/chrome/setup.sh
 . ~/.dotfiles/spotify/setup.sh
+. ~/.dotfiles/dropbox/setup.sh
