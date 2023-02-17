@@ -7,7 +7,7 @@ Obs.: this script is currently adapted to setup a fresh Ubuntu 20.04 installatio
 download the initial script:
 
 ```
-curl https://raw.githubusercontent.com/luanramosvicente/dotfiles/main/setup.sh > setup.sh
+curl https://raw.githubusercontent.com/luanrv/dotfiles/ubuntu/setup.sh > setup.sh
 ```
 
 make it executable:
@@ -22,7 +22,7 @@ run:
 ./setup.sh
 ```
 
-to install only a specific module, use:
+Obs.: to install only a specific module, use:
 
 ```
 ./setup.sh <module> # e.g ./setup.sh vim
