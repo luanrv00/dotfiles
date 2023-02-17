@@ -6,6 +6,7 @@ sudo apt update -y
 . ~/.dotfiles/git/setup.sh
 . ~/.dotfiles/bash/setup.sh
 . ~/.dotfiles/tmux/setup.sh
+. ~/.dotfiles/tmuxinator/setup.sh
 . ~/.dotfiles/vim/setup.sh
 . ~/.dotfiles/asdf/setup.sh
 . ~/.dotfiles/ruby/setup.sh
