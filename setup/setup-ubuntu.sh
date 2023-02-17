@@ -2,7 +2,6 @@
 echo 'updating apt packages...'
 sudo apt update -y
 
-. ~/.dotfiles/bootstrap/setup-ubuntu.sh
 . ~/.dotfiles/git/setup.sh
 . ~/.dotfiles/bash/setup.sh
 . ~/.dotfiles/tmux/setup.sh
