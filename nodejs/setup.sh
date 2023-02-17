@@ -4,6 +4,9 @@ echo "\n\n"
 echo 'initializing setup for nodejs...'
 echo '__________________________________________________________________________'
 
+echo 'reloading bashrc...'
+source ~/.bashrc
+
 echo 'installing latest version of nodejs...'
 asdf plugin add nodejs
 asdf install nodejs latest
