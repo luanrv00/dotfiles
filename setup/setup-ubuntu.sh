@@ -2,6 +2,7 @@
 echo 'updating apt packages...'
 sudo apt update -y
 
+. ~/.dotfiles/curl/setup.sh
 . ~/.dotfiles/git/setup.sh
 . ~/.dotfiles/bash/setup.sh
 . ~/.dotfiles/tmux/setup.sh

@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
-
 echo "\n\n"
 echo 'initializing setup for docker...'
 echo '__________________________________________________________________________'
 
 echo 'installing dependencies...'
-sudo apt install -y ca-certificates curl gnupg lsb-release
+sudo apt install -y ca-certificates gnupg lsb-release
 
 echo 'configuring GPG keys...'
 sudo mkdir -p /etc/apt/keyrings
