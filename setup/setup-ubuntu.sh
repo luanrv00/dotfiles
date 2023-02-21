@@ -14,4 +14,5 @@ sudo apt update -y
 . ~/.dotfiles/chrome/setup.sh
 . ~/.dotfiles/spotify/setup.sh
 . ~/.dotfiles/dropbox/setup.sh
+. ~/.dotfiles/telegram/setup.sh
 . ~/.dotfiles/dracula/setup.sh
