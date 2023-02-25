@@ -13,3 +13,6 @@ chmod +x ~/.local/bin/dropbox
 
 echo 'starting dropbox...'
 dropbox start
+
+echo 'stoping dropbox...'
+dropbox stop

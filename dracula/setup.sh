@@ -8,4 +8,7 @@ dropbox start
 
 echo 'setting up dracula for vim...'
 mkdir -p ~/.vim/pack/plugins/start
-cp -R  dropbox/dracula_pro/themes/vim ~/.vim/pack/plugins/start/vim
+cp -R  ~/Dropbox/dracula_pro/themes/vim ~/.vim/pack/plugins/start/dracula_pro
+
+echo 'stoping dropbox...'
+dropbox stop
