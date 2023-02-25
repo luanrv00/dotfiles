@@ -4,7 +4,7 @@ echo 'initializing setup for dracula...'
 echo '__________________________________________________________________________'
 
 echo 'starting dropbox...'
-~/.dropbox-dist/dropboxd
+dropbox start
 
 echo 'setting up dracula for vim...'
 mkdir -p ~/.vim/pack/plugins/start
