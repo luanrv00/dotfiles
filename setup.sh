@@ -13,6 +13,12 @@
 echo 'installing wget...'
 sudo apt install -y wget
 
+echo 'verifying existence of current dotilfes folder...'
+DOTFILES_PATH = $HOME/.dotfiles
+if [ -d DOTFILES_PATH ]; then
+  mv DOTFILES_PATH $HOME/backup-dotfiles
+fi
+
 echo 'downloading dotfiles from remote repository...'
 wget https://github.com/luanrv/dotfiles/archive/refs/heads/ubuntu.zip -O ~/dotfiles.zip
 
