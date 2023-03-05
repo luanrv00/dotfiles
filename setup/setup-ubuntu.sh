@@ -17,4 +17,5 @@ sudo apt update -y
 . ~/.dotfiles/spotify/setup.sh
 . ~/.dotfiles/dropbox/setup.sh
 . ~/.dotfiles/telegram/setup.sh
+. ~/.dotfiles/insomnia/setup.sh
 . ~/.dotfiles/dracula/setup.sh
