@@ -12,6 +12,7 @@ sudo apt update -y
 . ~/.dotfiles/nodejs/setup.sh
 . ~/.dotfiles/tmux/setup.sh
 . ~/.dotfiles/tmuxinator/setup.sh
+. ~/.dotfiles/alacritty/setup.sh
 . ~/.dotfiles/chrome/setup.sh
 . ~/.dotfiles/spotify/setup.sh
 . ~/.dotfiles/dropbox/setup.sh
