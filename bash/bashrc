@@ -88,18 +88,19 @@ dl-playlist() {
 }
 
 # Loads asdf (https://github.com/asdf-vm/asdf/)
-if [ -d ~/.asdf ]; then
-  . $HOME/.asdf/asdf.sh
-  . $HOME/.asdf/completions/asdf.bash
+ASDF_PATH = $HOME/.asdf
+if [ -d ASDF_PATH ]; then
+  . ASDF_PATH/asdf.sh
+  . ASDF_PATH/completions/asdf.bash
 fi
 
-export PATH="$PATH:$(yarn global bin)"
+#export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:$HOME/.local/bin"
 
 # Search backwrds on the history
 bind '"\e[A": history-search-backward'
 
 # loads development env vars in general
-. ~/.env.global
+# . ~/.env.global
 
 echo "Wake up, $USER..."
