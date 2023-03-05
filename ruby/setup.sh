@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 echo "\n\n"
 echo 'initializing setup for ruby...'
 echo '__________________________________________________________________________'
