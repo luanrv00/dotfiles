@@ -1,28 +1,30 @@
 # ~/.dotfiles
 
-Obs.: this script is currently adapted to setup a fresh Ubuntu 20.04 installation. 
+this script is intended to setup a fresh installation of **Xubuntu** or **WSL2 on Windows 10**.
 
 ## running
 
-download the initial script:
+### 1. download the initial script
 
 ```
-curl https://raw.githubusercontent.com/luanrv/dotfiles/ubuntu/setup.sh > setup.sh
+curl https://github.com/luanrv/dotfiles/blob/ubuntu/setup.sh > setup.sh
 ```
 
-make it executable:
+### 2. make it executable
 
 ```
 chmod +x setup.sh
 ```
 
-run:
+### 3. run
+
+**to setup all dotfiles for all available modules:**
 
 ```
 ./setup.sh
 ```
 
-Obs.: to install only a specific module, use:
+**to install just a specific module:**
 
 ```
 ./setup.sh <module> # e.g ./setup.sh vim
@@ -32,10 +34,10 @@ Obs.: to install only a specific module, use:
 
 | Key binding | Action                              |
 | :---------- | :---------------------------------- |
-| `<leader>t` | open/close **NERDTree**          |
-| `<tab>`     | navigate through tabs          |
-| `gd`        | open api documentation         |
-| `gi`        | go to implementation                |
+| `<leader>t` | open/close **NERDTree** |
+| `<tab>`     | navigate through tabs |
+| `gd`        | open documentation for code fragment under cursor |
+| `gi`        | go to implementation of code fragment under cursor |
 
 ## aliases for bash
 
