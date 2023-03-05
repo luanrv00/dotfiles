@@ -1,32 +1,30 @@
 # ~/.dotfiles
 
-this script is intended to setup a fresh installation of **Ubuntu 22.04** and **WSL on Windows 10**.
+this script is intended to setup a fresh installation of **Xubuntu** or **WSL2 on Windows 10**.
 
 ## running
 
-_Make sure to choose the OS on available branches to download the correct script_
-
-download the initial script:
+### 1. download the initial script
 
 ```
-curl https://raw.githubusercontent.com/luanrv/dotfiles/main/setup.sh > setup.sh
+curl https://github.com/luanrv/dotfiles/blob/ubuntu/setup.sh > setup.sh
 ```
 
-make it executable:
+### 2. make it executable
 
 ```
 chmod +x setup.sh
 ```
 
-### usage:
+### 3. run
 
-**to install all configs:**
+**to setup all dotfiles for all available modules:**
 
 ```
 ./setup.sh
 ```
 
-**to install only a specific module:**
+**to install just a specific module:**
 
 ```
 ./setup.sh <module> # e.g ./setup.sh vim
@@ -36,10 +34,10 @@ chmod +x setup.sh
 
 | Key binding | Action                              |
 | :---------- | :---------------------------------- |
-| `<leader>t` | open/close **NERDTree**          |
-| `<tab>`     | navigate through tabs          |
-| `gd`        | open api documentation         |
-| `gi`        | go to implementation                |
+| `<leader>t` | open/close **NERDTree** |
+| `<tab>`     | navigate through tabs |
+| `gd`        | open documentation for code fragment under cursor |
+| `gi`        | go to implementation of code fragment under cursor |
 
 ## aliases for bash
 
