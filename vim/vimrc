@@ -42,10 +42,10 @@ set guifont=JetBrains\ Mono\ ExtraLight\ 11
 
 " colorscheme
 syntax on
-"packadd! dracula_pro
-"colorscheme dracula_pro
-"let g:dracula_colorterm = 0
-colorscheme iceberg
+packadd! dracula_pro
+colorscheme dracula_pro
+let g:dracula_colorterm = 0
+"colorscheme iceberg
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
