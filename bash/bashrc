@@ -88,10 +88,9 @@ dl-playlist() {
 }
 
 # Loads asdf (https://github.com/asdf-vm/asdf/)
-ASDF_PATH = $HOME/.asdf
-if [ -d ASDF_PATH ]; then
-  . ASDF_PATH/asdf.sh
-  . ASDF_PATH/completions/asdf.bash
+if [ -d $HOME/.asdf ]; then
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
 fi
 
 #export PATH="$PATH:$(yarn global bin)"
