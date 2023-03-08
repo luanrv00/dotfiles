@@ -15,6 +15,7 @@ sudo apt update -y
 . ~/.dotfiles/asdf/setup.sh
 . ~/.dotfiles/ruby/setup.sh
 . ~/.dotfiles/nodejs/setup.sh
+. ~/.dotfiles/python/setup.sh
 . ~/.dotfiles/tmux/setup.sh
 . ~/.dotfiles/tmuxinator/setup.sh
 . ~/.dotfiles/dracula/setup.sh
