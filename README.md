@@ -32,7 +32,7 @@ chmod +x setup.sh
 
 ## keybindings for vim
 
-| Key binding | Action                              |
+| key binding | action                              |
 | :---------- | :---------------------------------- |
 | `<leader>t` | open/close **NERDTree** |
 | `<tab>`     | navigate through tabs |
