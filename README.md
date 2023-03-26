@@ -1,6 +1,6 @@
 # ~/.dotfiles
 
-this script is intended to setup a fresh installation of **Xubuntu** or **WSL2 on Windows 10**.
+this script is intended to setup a fresh installation of **Xubuntu**.
 
 ## running
 
