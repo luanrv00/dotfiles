@@ -16,3 +16,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 echo 'installing docker...'
 sudo apt update -y
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose
+
+echo 'enabling command docker for current user...'
+sudo groupadd docker
+sudo usermod -aG docker $USER
