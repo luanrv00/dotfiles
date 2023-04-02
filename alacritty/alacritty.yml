@@ -1,7 +1,7 @@
 font:
   normal:
     family: JetBrains Mono Thin
-  size: 10
+  size: 13
 colors:
   primary:
     background: '0x0b0d0f'
