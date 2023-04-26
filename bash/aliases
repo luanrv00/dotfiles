@@ -53,3 +53,5 @@ alias txs="tmuxinator start"
 alias txe="tmuxinator edit"
 
 alias v="vim"
+alias vi="vim"
+alias vmi="vim"
