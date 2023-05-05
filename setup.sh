@@ -56,6 +56,7 @@ if [ $# -eq 0 ]; then
   . ~/.dotfiles/tmuxinator/setup.sh
   . ~/.dotfiles/dracula/setup.sh
   . ~/.dotfiles/alacritty/setup.sh
+  . ~/.dotfiles/typora/setup.sh
 else
   . ~/.dotfiles/$1/setup.sh
 fi
