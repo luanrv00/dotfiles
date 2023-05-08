@@ -50,6 +50,7 @@ alias tls="tmux list-session"
 alias tk="tmux kill-session -t"
 alias tx="tmuxinator"
 alias txs="tmuxinator start"
+alias txstp="tmuxinator stop"
 alias txe="tmuxinator edit"
 
 alias v="vim"
