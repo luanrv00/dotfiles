@@ -36,7 +36,6 @@ set shiftround " Round indent to multiple of shiftwidth
 set number relativenumber
 set numberwidth=1
 set background=dark
-set laststatus=2
 set cursorline
 set guifont=JetBrains\ Mono\ ExtraLight\ 11
 
@@ -74,7 +73,8 @@ vnoremap fj <esc>
 "   %L number of lines in buffer
 "   %c current column number
 "   %P percentage through buffer (smart, includes 'Top' and 'Bot' markers)
-set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
+" set statusline=%<\ %F\ %m%=%y%r\ L\ %l\/\%L\ C\ %c%V\ (%P)
+" set laststatus=2
 
 hi Normal ctermbg=233 ctermfg=253
 "hi Comment ctermfg=245 ctermbg=232
