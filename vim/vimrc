@@ -139,12 +139,12 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>w :w!<cr>
 
 " moves selection up/down
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
+" nnoremap J :m .+1<CR>==
+" nnoremap K :m .-2<CR>==
+" inoremap J <Esc>:m .+1<CR>==gi
+" inoremap K <Esc>:m .-2<CR>==gi
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoremap J <Esc>:m .+1<CR>==gi
-inoremap K <Esc>:m .-2<CR>==gi
 
 " Remove unwanted white spaces
 autocmd FileType typescriptreact,tsx,typescript,vim,sh,ruby,python,php,javascript,html,css autocmd BufWritePre <buffer> %s/\s\+$//e
