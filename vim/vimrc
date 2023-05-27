@@ -33,7 +33,7 @@ set expandtab
 set shiftround " Round indent to multiple of shiftwidth
 
 " Visual settings
-set number relativenumber
+set number
 set numberwidth=1
 set background=dark
 set cursorline
