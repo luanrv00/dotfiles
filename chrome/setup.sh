@@ -10,3 +10,6 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key ad
 sudo apt update -y
 sudo apt install -y google-chrome-stable
 
+echo 'installing font with emotes for google chrome...'
+echo '__________________________________________________________________________'
+sudo apt install -y fonts-noto-color-emoji
