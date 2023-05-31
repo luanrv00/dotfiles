@@ -12,3 +12,6 @@ rm -f packages.microsoft.gpg
 echo 'installing vscode...'
 sudo apt install -y apt-transport-https
 sudo apt install -y code
+
+echo 'copying settings file for vscode...'
+ln -sf ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
