@@ -39,6 +39,7 @@ if [ $# -eq 0 ]; then
   sudo apt update -y
 
   . ~/.dotfiles/curl/setup.sh
+  . ~/.dotfiles/gpg/setup.sh
   . ~/.dotfiles/chrome/setup.sh
   . ~/.dotfiles/spotify/setup.sh
   . ~/.dotfiles/dropbox/setup.sh
