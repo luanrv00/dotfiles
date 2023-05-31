@@ -58,6 +58,7 @@ if [ $# -eq 0 ]; then
   . ~/.dotfiles/dracula/setup.sh
   . ~/.dotfiles/alacritty/setup.sh
   . ~/.dotfiles/typora/setup.sh
+  . ~/.dotfiles/vscode/setup.sh
 else
   . ~/.dotfiles/$1/setup.sh
 fi
