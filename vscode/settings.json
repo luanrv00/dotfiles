@@ -1,8 +1,13 @@
 {
-    "security.workspace.trust.untrustedFiles": "open",
-    "redhat.telemetry.enabled": false,
-    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.tabSize": 2,
-    "editor.fontSize": 16,
-    "workbench.colorTheme": "Dracula Pro (Van Helsing)"
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "editor.fontWeight": 1,
+  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
+  "workbench.startupEditor": "none",
+  "editor.cursorStyle": "block",
+  "editor.wordWrap": "on"
 }
+
