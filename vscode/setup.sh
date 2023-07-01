@@ -15,3 +15,7 @@ sudo apt install -y code
 
 echo 'copying settings file for vscode...'
 ln -sf ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+ln -sf ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+
+echo 'installing plugins depndencies...'
+gem install rubocop

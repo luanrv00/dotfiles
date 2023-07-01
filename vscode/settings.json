@@ -1,13 +1,27 @@
 {
+  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "redhat.telemetry.enabled": false,
+  "window.restoreWindows": "none",
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.tabSize": 2,
   "editor.fontSize": 16,
   "editor.fontWeight": 1,
-  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
-  "workbench.startupEditor": "none",
   "editor.cursorStyle": "block",
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "editor.formatOnPaste": true,
+  "editor.links": false,
+  "editor.formatOnSave": true,
+  "redhat.telemetry.enabled": false,
+  "prettier.prettierPath": "~/.asdf/shims/prettier",
+  "eslint.nodePath": "~/.asdf/shims/eslint",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "ruby.rubocop.executePath": "/home/luan/.asdf/shims/rubocop"
+  },
+  "editor.minimap.enabled": false
 }
-
