@@ -5,6 +5,8 @@ window:
 font:
   normal:
     family: JetBrains Mono Thin
+  bold:
+    style: thin
   size: 13
 colors:
   primary:
