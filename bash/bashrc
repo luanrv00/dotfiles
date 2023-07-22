@@ -87,6 +87,14 @@ dl-playlist() {
   youtube-dl -x --audio-format mp3 -o '%(title)s.%(ext)s' $1
 }
 
+apt-update() {
+  sudo apt update -y
+  sudo apt upgrade -y
+  sudo apt autoremove -y
+  sudo apt autoclean -y
+  sudo apt clean -y
+}
+
 # Loads asdf (https://github.com/asdf-vm/asdf/)
 if [ -d $HOME/.asdf ]; then
   . $HOME/.asdf/asdf.sh
