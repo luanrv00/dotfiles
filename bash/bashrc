@@ -110,4 +110,4 @@ bind '"\e[A": history-search-backward'
 # loads development env vars in general
 # . ~/.env.global
 
-echo "Wake up, $USER..."
+# echo "Wake up, $USER..."
