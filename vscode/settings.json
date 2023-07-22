@@ -32,5 +32,6 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "~/.vimrc"
+  "vim.vimrc.path": "~/.vimrc",
+  "update.showReleaseNotes": false
 }
