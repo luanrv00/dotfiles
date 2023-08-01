@@ -45,6 +45,7 @@ alias c="docker-compose"
 
 alias t="tmux"
 alias tn="tmux new -s"
+alias tm="tmux new -s main"
 alias ta="tmux attach -t"
 alias tls="tmux list-session"
 alias tk="tmux kill-session -t"
