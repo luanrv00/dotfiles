@@ -57,3 +57,6 @@ alias txe="tmuxinator edit"
 alias v="vim"
 alias vi="vim"
 alias vmi="vim"
+
+alias ang-up="tmuxinator start ang"
+alias ang-update="tmuxinator start ang-update"
