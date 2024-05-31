@@ -1,33 +1,27 @@
 # ~/.dotfiles
 
-this script is intended to setup a fresh installation of **Xubuntu**.
+this script is intended to setup a fresh installation of **Ubuntu**.
 
 ## running
 
-### 1. download the initial script
+### 1. download the repository
 
 ```
-curl https://github.com/luanrv/dotfiles/blob/ubuntu/setup.sh > setup.sh
+git clone git@github.com:luanrv00/dotfiles.git .dotfiles
 ```
 
-### 2. make it executable
-
-```
-chmod +x setup.sh
-```
-
-### 3. run
+### 2. run
 
 **to setup all dotfiles for all available modules:**
 
 ```
-./setup.sh
+.dotfiles/setup.sh
 ```
 
 **to install just a specific module:**
 
 ```
-./setup.sh <module> # e.g ./setup.sh vim
+.dotfiles/setup.sh <module> # e.g ./setup.sh vim
 ```
 
 ## keybindings for vim
