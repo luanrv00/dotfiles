@@ -13,7 +13,7 @@
   "editor.formatOnPaste": true,
   "editor.links": false,
   "editor.formatOnSave": true,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "redhat.telemetry.enabled": false,
   "prettier.prettierPath": "~/.asdf/shims/prettier",
   "eslint.nodePath": "~/.asdf/shims/eslint",

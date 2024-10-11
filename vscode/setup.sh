@@ -5,6 +5,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packag
 rm -f packages.microsoft.gpg
 sudo apt install -y apt-transport-https
 sudo apt install -y code
+mkdir -p ~/.config/Code/User
 ln -sf ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 ln -sf ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-gem install rubocop
+#gem install rubocop
