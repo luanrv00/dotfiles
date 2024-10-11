@@ -19,6 +19,7 @@ if [ $# -eq 0 ]; then
   . ~/.dotfiles/asdf/setup.sh
   . ~/.dotfiles/ruby/setup.sh
   . ~/.dotfiles/nodejs/setup.sh
+  . ~/.dotfiles/yarn/setup.sh
   . ~/.dotfiles/python/setup.sh
   . ~/.dotfiles/tmux/setup.sh
   . ~/.dotfiles/tmuxinator/setup.sh
