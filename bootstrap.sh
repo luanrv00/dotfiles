@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env shchmo
 sudo apt install -y git
 git clone https://github.com/luanrv00/dotfiles.git ~/.dotfiles
 echo "Succesfully installed git and downloaded the dotfiles repository!"
