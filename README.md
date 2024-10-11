@@ -2,6 +2,8 @@
 
 this script is intended to setup a fresh installation of **Ubuntu**.
 
+![ss](ss.png)
+
 ## running
 
 ### 1. execute the bootstrap script
@@ -23,7 +25,7 @@ wget -qO - https://raw.githubusercontent.com/luanrv00/dotfiles/refs/heads/main/b
 **to install just a specific module:**
 
 ```
-.dotfiles/setup.sh <module> # e.g ./setup.sh vim
+.dotfiles/setup.sh <module> # e.g .dotfiles/setup.sh vim
 ```
 
 ## keybindings for vim
