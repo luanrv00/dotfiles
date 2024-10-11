@@ -4,13 +4,15 @@ this script is intended to setup a fresh installation of **Ubuntu**.
 
 ## running
 
-### 1. download the repository
+### 1. execute the bootstrap script
+
+this scrtipt will install git and download this repository into your machine as `~/.dotfiles`
 
 ```
-git clone git@github.com:luanrv00/dotfiles.git .dotfiles
+wget -qO - https://raw.githubusercontent.com/luanrv00/dotfiles/refs/heads/main/bootstrap.sh | bash
 ```
 
-### 2. run
+### 2. run setup script
 
 **to setup all dotfiles for all available modules:**
 
