@@ -9,13 +9,15 @@ cd
 rm -rf vim
 
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/vim/coc-settings.json ~/.vim
+
 mkdir -p ~/.vim/pack/plugins/start
 cd ~/.vim/pack/plugins/start
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/neoclide/coc.nvim.git
-ln -sf ~/.dotfiles/vim/coc-settings.json ~/.vim
 git clone https://github.com/wakatime/vim-wakatime.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/leafgarland/typescript-vim.git
 git clone https://github.com/MaxMEllon/vim-jsx-pretty.git
+git clone git@github.com:cocopon/iceberg.vim.git
 cd
