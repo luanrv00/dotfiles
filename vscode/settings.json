@@ -1,5 +1,4 @@
 {
-  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
   "workbench.startupEditor": "none",
   "explorer.confirmDelete": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -33,5 +32,6 @@
   "terminal.integrated.cursorBlinking": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/.vimrc",
-  "update.showReleaseNotes": false
+  "update.showReleaseNotes": false,
+  "workbench.colorTheme": "Iceberg"
 }
