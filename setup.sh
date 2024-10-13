@@ -21,6 +21,7 @@ if [ $# -eq 0 ]; then
   . ~/.dotfiles/nodejs/setup.sh
   . ~/.dotfiles/yarn/setup.sh
   . ~/.dotfiles/python/setup.sh
+  . ~/.dotfiles/java/setup.sh
   . ~/.dotfiles/tmux/setup.sh
   . ~/.dotfiles/tmuxinator/setup.sh
   . ~/.dotfiles/spotify/setup.sh
