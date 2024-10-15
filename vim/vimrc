@@ -24,6 +24,7 @@ set hlsearch
 set undofile " Persistent undo, even if you close and reopen Vim
 set undodir="$HOME/.vim/undos"
 set nojoinspaces " No double spaces with join
+set autochdir
 
 " Indentation settings
 set softtabstop=2
