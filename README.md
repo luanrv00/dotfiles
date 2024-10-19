@@ -1,8 +1,10 @@
 # ~/.dotfiles
 
-this script is intended to setup a fresh installation of **Ubuntu**.
+this script is intended to setup a fresh installation of **Ubuntu** (including wsl).
 
 ![ss](ss.png)
+
+![sswin](sswin.jpg)
 
 ## running
 
@@ -20,6 +22,12 @@ wget -qO - https://raw.githubusercontent.com/luanrv00/dotfiles/refs/heads/main/b
 
 ```
 .dotfiles/setup.sh
+```
+
+**to setup all dotfiles for wsl:**
+
+```
+.dotfiles/setup.sh wsl
 ```
 
 **to install just a specific module:**
