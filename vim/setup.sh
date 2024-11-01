@@ -8,8 +8,9 @@ sudo make install
 cd
 rm -rf vim
 
+mkdir ~/.vim
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/vim/coc-settings.json ~/.vim
+ln -sf ~/.dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
 
 mkdir -p ~/.vim/pack/plugins/start
 cd ~/.vim/pack/plugins/start
