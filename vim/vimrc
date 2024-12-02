@@ -42,7 +42,9 @@ set guifont=IBM\ Plex\ Mono\ 11
 
 " colorscheme
 syntax on
-colorscheme iceberg
+colorscheme edge
+packadd! edge
+"colorscheme iceberg
 "packadd! dracula_pro
 "colorscheme dracula_pro
 "let g:dracula_colorterm = 0
