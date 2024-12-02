@@ -80,7 +80,7 @@ vnoremap fj <esc>
 " set laststatus=2
 
 hi Normal ctermbg=233 ctermfg=253
-"hi Comment ctermfg=245 ctermbg=232
+hi Comment ctermfg=242 ctermbg=233 cterm=none
 hi CursorLine ctermbg=232 cterm=none
 hi LineNr ctermfg=240 ctermbg=233 cterm=none
 hi CursorLineNr ctermfg=240 ctermbg=233 cterm=none
