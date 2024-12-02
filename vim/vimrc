@@ -118,10 +118,10 @@ hi Folded ctermbg=233 ctermfg=255 cterm=none
 let mapleader = "-"
 
 " Identify the highlight group under the cursor
-" map <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-" \ . '> trans<'
-" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+map <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+\ . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Make splits navigation easies
 nnoremap <c-k> <c-w>k
