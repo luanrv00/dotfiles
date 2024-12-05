@@ -4,10 +4,9 @@ window:
     lines: 50
 font:
   normal:
-    family: JetBrains Mono Thin
-  bold:
-    style: thin
-  size: 13
+    family: IBM Plex Mono
+    style: Light
+  size: 11
 colors:
   primary:
     background: '0x0b0d0f'
