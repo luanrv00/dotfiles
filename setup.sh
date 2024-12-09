@@ -37,13 +37,13 @@ elif [ $1 = "wsl" ];then
   . ~/.dotfiles/git/setup.sh
   . ~/.dotfiles/bash/setup.sh
   . ~/.dotfiles/asdf/setup.sh
-  . ~/.dotfiles/ruby/setup.sh
-  . ~/.dotfiles/nodejs/setup.sh
-  . ~/.dotfiles/yarn/setup.sh
-  . ~/.dotfiles/python/setup.sh
-  . ~/.dotfiles/java/setup.sh
-  . ~/.dotfiles/tmux/setup.sh
-  . ~/.dotfiles/tmuxinator/setup.sh
+  #. ~/.dotfiles/ruby/setup.sh
+  #. ~/.dotfiles/nodejs/setup.sh
+  #. ~/.dotfiles/yarn/setup.sh
+  #. ~/.dotfiles/python/setup.sh
+  #. ~/.dotfiles/java/setup.sh
+  #. ~/.dotfiles/tmux/setup.sh
+  #. ~/.dotfiles/tmuxinator/setup.sh
 else
   . ~/.dotfiles/$1/setup.sh
 fi
